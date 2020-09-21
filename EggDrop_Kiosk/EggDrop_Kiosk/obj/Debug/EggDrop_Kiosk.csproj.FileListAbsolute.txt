@@ -1,0 +1,15 @@
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\obj\Debug\EggDrop_Kiosk.csprojAssemblyReference.cache
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\bin\Debug\EggDrop_Kiosk.exe.config
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\bin\Debug\EggDrop_Kiosk.exe
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\bin\Debug\EggDrop_Kiosk.pdb
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\obj\Debug\View\MainWindow.g.cs
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\obj\Debug\App.g.cs
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\obj\Debug\EggDrop_Kiosk_MarkupCompile.cache
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\obj\Debug\EggDrop_Kiosk_MarkupCompile.lref
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\obj\Debug\View\MainWindow.baml
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\obj\Debug\EggDrop_Kiosk.g.resources
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\obj\Debug\EggDrop_Kiosk.Properties.Resources.resources
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\obj\Debug\EggDrop_Kiosk.csproj.GenerateResource.cache
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\obj\Debug\EggDrop_Kiosk.csproj.CoreCompileInputs.cache
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\obj\Debug\EggDrop_Kiosk.exe
+C:\Users\sh031224\Desktop\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\obj\Debug\EggDrop_Kiosk.pdb
