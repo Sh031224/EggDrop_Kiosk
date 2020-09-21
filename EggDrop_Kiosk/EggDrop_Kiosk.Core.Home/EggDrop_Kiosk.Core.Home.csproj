@@ -44,11 +44,12 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Assets\" />
-    <Folder Include="Model\" />
-    <Folder Include="Service\" />
-    <Folder Include="ViewModel\" />
+    <None Include="Assets\.keep" />
+    <None Include="Model\.keep" />
+    <None Include="Service\.keep" />
+    <None Include="ViewModel\.keep" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

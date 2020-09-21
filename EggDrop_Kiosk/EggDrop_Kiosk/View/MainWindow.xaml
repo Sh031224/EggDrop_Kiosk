@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EggDrop_Kiosk"
+        xmlns:control_Home="clr-namespace:EggDrop_Kiosk.Control.Home"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        ResizeMode="NoResize"
+        Title="MainWindow" Height="1080" Width="1920">
+    <control_Home:HomeControl x:Name="CtrlHome" Visibility="Visible" />
 </Window>
