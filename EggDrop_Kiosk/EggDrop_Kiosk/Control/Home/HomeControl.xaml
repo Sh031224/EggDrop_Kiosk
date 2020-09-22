@@ -6,7 +6,22 @@
              xmlns:local="clr-namespace:EggDrop_Kiosk.Control.Home"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
-    <Grid>
-        <TextBlock>Home</TextBlock>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Text="안녕하세요 주문이나하세여."
+                   Height="70"
+                   FontSize="56"
+                   FontWeight="Bold"
+                   Margin="0 60 0 0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"/>
+        <Button Grid.Row="1" Height="150"
+                VerticalAlignment="Bottom"
+                Content="주문하기"
+                FontSize="42"
+                FontWeight="Regular"/>
     </Grid>
 </UserControl>
