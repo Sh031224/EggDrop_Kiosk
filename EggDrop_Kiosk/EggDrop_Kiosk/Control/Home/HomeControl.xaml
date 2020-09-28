@@ -8,20 +8,34 @@
              d:DesignHeight="1080" d:DesignWidth="1920">
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="40*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="1" Text="안녕하세요 주문이나하세여."
+        <MediaElement Name="EggDropVideo" Grid.Row="0" Stretch="Fill"
+                      Source="C:\Users\LimGyueMin\Documents\GitHub\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\Assets\Home\home-video.mp4"
+                      LoadedBehavior="Play"
+                      UnloadedBehavior="Manual"
+                      MediaEnded="EggDropVideoEnded"/>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="EGG DROP을 방문해주셔서 감사합니다."
                    Height="70"
-                   FontSize="56"
-                   FontWeight="Bold"
+                   FontSize="46"
+                   FontWeight="DemiBold"
                    Margin="0 60 0 0"
+                   HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Text="맛있는 샌드위치가 당신을 기다리고 있어요."
+                   Height="70"
+                   FontSize="36"
+                   FontWeight="Normal"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Top"/>
+                   Foreground="Gray"/>
+        </StackPanel>
         <Button Grid.Row="1" Height="150"
                 VerticalAlignment="Bottom"
                 Content="주문하기"
                 FontSize="42"
-                FontWeight="Regular"/>
+                FontWeight="Regular"
+                Foreground="white"
+                Background="#FF4646" Click="Button_Click"/>
     </Grid>
 </UserControl>
