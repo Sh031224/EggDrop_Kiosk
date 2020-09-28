@@ -6,6 +6,6 @@
         xmlns:local="clr-namespace:EggDrop_Kiosk"
         xmlns:control_Home="clr-namespace:EggDrop_Kiosk.Control.Home"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920">
+        Title="MainWindow" Width="1920" Height="1080" >
     <control_Home:HomeControl x:Name="CtrlHome" Visibility="Visible" />
 </Window>
