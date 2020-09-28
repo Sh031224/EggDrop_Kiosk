@@ -23,18 +23,22 @@ namespace EggDrop_Kiosk.Control.Home
         public HomeControl()
         {
             InitializeComponent();
+
+            Loaded += HomeControl_Loaded;
         }
 
+        private void HomeControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            // 비디오 자동 재생
+            EggDropVideo.Play();
+        }
+
+        // 비디오 무한 재생
         private void EggDropVideoEnded(object sender, RoutedEventArgs e)
         {
-            this.EggDropVideo.Stop();
-            this.EggDropVideo.Position = TimeSpan.FromSeconds(0);
-            this.EggDropVideo.Play();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
+            EggDropVideo.Stop();
+            EggDropVideo.Position = TimeSpan.FromSeconds(0);
+            EggDropVideo.Play();
         }
     }
 }

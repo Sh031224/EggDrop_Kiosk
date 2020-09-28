@@ -12,7 +12,7 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <MediaElement Name="EggDropVideo" Grid.Row="0" Stretch="Fill"
-                      Source="/Assets/Home/home-video.mp4"
+                      Source="Assets/Home/home-video.mp4"
                       LoadedBehavior="Play"
                       UnloadedBehavior="Manual"
                       MediaEnded="EggDropVideoEnded"/>
