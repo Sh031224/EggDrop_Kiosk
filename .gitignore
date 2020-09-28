@@ -256,6 +256,8 @@ paket-files/
 # CodeRush
 .cr/
 
+home-video.mp4
+
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
