@@ -24,5 +24,17 @@ namespace EggDrop_Kiosk.Control.Home
         {
             InitializeComponent();
         }
+
+        private void EggDropVideoEnded(object sender, RoutedEventArgs e)
+        {
+            this.EggDropVideo.Stop();
+            this.EggDropVideo.Position = TimeSpan.FromSeconds(0);
+            this.EggDropVideo.Play();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
