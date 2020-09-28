@@ -12,7 +12,7 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <MediaElement Name="EggDropVideo" Grid.Row="0" Stretch="Fill"
-                      Source="C:\Users\LimGyueMin\Documents\GitHub\EggDrop_Kiosk\EggDrop_Kiosk\EggDrop_Kiosk\Assets\Home\home-video.mp4"
+                      Source="/Assets/Home/home-video.mp4"
                       LoadedBehavior="Play"
                       UnloadedBehavior="Manual"
                       MediaEnded="EggDropVideoEnded"/>
@@ -35,7 +35,8 @@
                 Content="주문하기"
                 FontSize="42"
                 FontWeight="Regular"
+                Name="BtnOrder"
                 Foreground="white"
-                Background="#FF4646" Click="Button_Click"/>
+                Background="#FF4646"/>
     </Grid>
 </UserControl>

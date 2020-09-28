@@ -34,7 +34,7 @@ namespace EggDrop_Kiosk.Control.Home
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

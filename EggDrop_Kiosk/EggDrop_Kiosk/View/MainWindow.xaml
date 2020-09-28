@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EggDrop_Kiosk"
         xmlns:control_Home="clr-namespace:EggDrop_Kiosk.Control.Home"
+        xmlns:control_Order="clr-namespace:EggDrop_Kiosk.Control.Order"
         mc:Ignorable="d"
-        Title="MainWindow" Width="1920" Height="1080" >
-    <control_Home:HomeControl x:Name="CtrlHome" Visibility="Visible" />
+        Title="MainWindow" Width="1920" Height="1080">
+    <Grid>
+        <control_Home:HomeControl x:Name="CtrlHome" Visibility="Visible" />
+        <control_Order:OrderControl x:Name="CtrlOrder" Visibility="Collapsed" />
+    </Grid>
 </Window>

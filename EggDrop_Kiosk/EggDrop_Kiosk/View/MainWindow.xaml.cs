@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,20 @@ namespace EggDrop_Kiosk
         public MainWindow()
         {
             InitializeComponent();
+
+            Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            CtrlHome.BtnOrder.Click += BtnOrder_Click;
+        }
+
+        private void BtnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            // 시작 페이지에서 주문 페이지로 이동
+            CtrlHome.Visibility = Visibility.Collapsed;
+            CtrlOrder.Visibility = Visibility.Visible;
         }
     }
 }
