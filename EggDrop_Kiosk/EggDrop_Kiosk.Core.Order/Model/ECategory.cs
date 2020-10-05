@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EggDrop_Kiosk.Core.Order.Model
 {
-    enum ECategory
+    public enum ECategory
     {
         SANDWICH,
         COFFEE,
