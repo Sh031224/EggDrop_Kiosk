@@ -32,10 +32,22 @@ namespace EggDrop_Kiosk.Core.Order.ViewModel
             set => SetProperty(ref _categoryModels, value);
         }
 
-        //public Parallel LoadDataAsync()
-        //{
-
-        //}
+        // 병렬로 모든 데이터 로드
+        public void LoadData()
+        {
+            _isLoading = true;
+            Parallel.Invoke(
+                async () =>
+                {
+                    await LoadCategoryData();
+                },
+                async () =>
+                {
+                    await LoadProductData();
+                }
+            );
+            _isLoading = false;
+        }
 
         // 카테고리 로딩
         private async Task LoadCategoryData()

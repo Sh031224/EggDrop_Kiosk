@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EggDrop_Kiosk.Core.Order;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,13 @@ namespace EggDrop_Kiosk
     /// </summary>
     public partial class App : Application
     {
+        public static OrderData orderData = new OrderData();
+
+        // WPF 전역 예외처리, 어플리케이션 강제 종료 방지
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show("An unhandled exception just occured: " + e.Exception, "예외 발생", MessageBoxButton.OK, MessageBoxImage.Error);
+            e.Handled = true;
+        }
     }
 }
