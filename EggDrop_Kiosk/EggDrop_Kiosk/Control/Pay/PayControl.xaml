@@ -6,7 +6,44 @@
              xmlns:local="clr-namespace:EggDrop_Kiosk.Control.Pay"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid Background="#ffffff">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <StackPanel VerticalAlignment="center" HorizontalAlignment="center">
+                    <TextBlock Text="결제 수단을 선택해주세요." FontWeight="bold" FontSize="22" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="5*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Name="BtnCard" Grid.Column="0">
+                    <StackPanel>
+                        <TextBlock Text="카드결제" FontSize="28"/>
+                    </StackPanel>
+                </Button>
+                <Button Name="BtnCash" Grid.Column="2">
+                    <StackPanel>
+                        <TextBlock Text="현금결제" FontSize="28"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

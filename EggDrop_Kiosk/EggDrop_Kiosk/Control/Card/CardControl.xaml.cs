@@ -12,31 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 
-namespace EggDrop_Kiosk.Control.Order
+namespace EggDrop_Kiosk.Control.Card
 {
     /// <summary>
     /// UserControl1.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class OrderControl : UserControl
+    public partial class CardControl : UserControl
     {
-        public OrderControl()
+        public CardControl()
         {
             InitializeComponent();
-        }
-
-        private void dClock_Loaded(object sender, RoutedEventArgs e)
-        {
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Tick += Timer_Tick;
-            timer.Start();
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            dClock.Text = DateTime.Now.ToString();
         }
     }
 }
