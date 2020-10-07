@@ -68,12 +68,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Control\Card\CardControl.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Control\Cash\CashControl.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Control\Home\HomeControl.xaml">
       <SubType>Designer</SubType>
@@ -157,6 +157,14 @@
     <Content Include="Assets\Home\home-video.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Assets\Order\Sandwich\American Ham Cheese.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Avo Holic.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Bacon Dobuble Cheese.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Egg Cobb Salad.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Garlic Bacon Cheese.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Mr.Egg.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Tamago Sando.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Teriyaki BBQ.PNG" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EggDrop_Kiosk.Core.Order\EggDrop_Kiosk.Core.Order.csproj">
