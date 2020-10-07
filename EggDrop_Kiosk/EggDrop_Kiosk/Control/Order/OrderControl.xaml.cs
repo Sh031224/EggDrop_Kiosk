@@ -24,6 +24,16 @@ namespace EggDrop_Kiosk.Control.Order
         public OrderControl()
         {
             InitializeComponent();
+
+            Loaded += OrderControl_Loaded;
+        }
+
+        private void OrderControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate ()
+            {
+                lbCategories.ItemsSource = App.orderData.orderViewModel.CategoryModels;
+            }));
         }
 
         private void dClock_Loaded(object sender, RoutedEventArgs e)

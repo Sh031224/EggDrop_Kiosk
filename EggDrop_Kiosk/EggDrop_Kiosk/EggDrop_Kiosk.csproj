@@ -35,9 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Prism, Version=7.2.0.1422, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.7.2.0.1422\lib\net45\Prism.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,12 +68,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Control\Card\CardControl.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Control\Cash\CashControl.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Control\Home\HomeControl.xaml">
       <SubType>Designer</SubType>
@@ -138,6 +144,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Assets\.keep" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -150,6 +157,14 @@
     <Content Include="Assets\Home\home-video.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Assets\Order\Sandwich\American Ham Cheese.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Avo Holic.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Bacon Dobuble Cheese.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Egg Cobb Salad.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Garlic Bacon Cheese.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Mr.Egg.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Tamago Sando.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Teriyaki BBQ.PNG" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EggDrop_Kiosk.Core.Order\EggDrop_Kiosk.Core.Order.csproj">
