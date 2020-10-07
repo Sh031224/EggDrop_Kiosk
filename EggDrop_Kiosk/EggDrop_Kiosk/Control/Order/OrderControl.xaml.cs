@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace EggDrop_Kiosk.Control.Order
 {
@@ -23,6 +24,16 @@ namespace EggDrop_Kiosk.Control.Order
         public OrderControl()
         {
             InitializeComponent();
+
+            Loaded += OrderControl_Loaded;
+        }
+
+        private void OrderControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate ()
+            {
+                lbCategories.ItemsSource = App.orderData.orderViewModel.CategoryModels;
+            }));
         }
     }
 }

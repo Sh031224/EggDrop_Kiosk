@@ -18,7 +18,7 @@
                    Padding="50 20 0 20"
                    Background="Gray"
                    Foreground="white"/>
-        <ListBox x:Name="lbCategory" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Top" BorderBrush="Transparent" Margin="136,2,-136,0" Grid.Row="1">
+        <ListBox x:Name="lbCategories" FontSize="30" FontWeight="SemiBold" VerticalAlignment="Top" BorderBrush="Transparent" Margin="192,2,10,0" Grid.Row="1" Height="62">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal" />
@@ -54,12 +54,13 @@
                     </Setter>
                 </Style>
             </ListBox.ItemContainerStyle>
-            
-            <ListBoxItem>Egg Sandwich</ListBoxItem>
-            <ListBoxItem>Coffee&amp;Drink</ListBoxItem>
-
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
-        <Label Content="메뉴소개" HorizontalAlignment="Left" Margin="29,10,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" FontFamily="MoeumT R" FontWeight="Bold"/>
+        <Label Content="메뉴소개" HorizontalAlignment="Left" Margin="29,14,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="37" FontFamily="MoeumT R" FontWeight="Bold"/>
 
     </Grid>
 </UserControl>

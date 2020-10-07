@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EggDrop_Kiosk", "EggDrop_Ki
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EggDrop_Kiosk.Core.Order", "EggDrop_Kiosk.Core.Order\EggDrop_Kiosk.Core.Order.csproj", "{F37A2EA7-E301-46BF-988F-64767A43155F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EggDrop_Kiosk.Core.Pay", "EggDrop_Kiosk.Core.Pay\EggDrop_Kiosk.Core.Pay.csproj", "{866CF33B-BF53-44E8-830C-90E6DFECCEA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EggDrop_Kiosk.Core.Table", "EggDrop_Kiosk.Core.Table\EggDrop_Kiosk.Core.Table.csproj", "{69980A13-06AD-4757-ACEE-1B9E293FAE2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EggDrop_Kiosk.Core.Admin", "EggDrop_Kiosk.Core.Admin\EggDrop_Kiosk.Core.Admin.csproj", "{F9C953D0-1511-46E4-AF23-FED0BAD406A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{F37A2EA7-E301-46BF-988F-64767A43155F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F37A2EA7-E301-46BF-988F-64767A43155F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F37A2EA7-E301-46BF-988F-64767A43155F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{866CF33B-BF53-44E8-830C-90E6DFECCEA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{866CF33B-BF53-44E8-830C-90E6DFECCEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{866CF33B-BF53-44E8-830C-90E6DFECCEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{866CF33B-BF53-44E8-830C-90E6DFECCEA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69980A13-06AD-4757-ACEE-1B9E293FAE2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69980A13-06AD-4757-ACEE-1B9E293FAE2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69980A13-06AD-4757-ACEE-1B9E293FAE2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69980A13-06AD-4757-ACEE-1B9E293FAE2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9C953D0-1511-46E4-AF23-FED0BAD406A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9C953D0-1511-46E4-AF23-FED0BAD406A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9C953D0-1511-46E4-AF23-FED0BAD406A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9C953D0-1511-46E4-AF23-FED0BAD406A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
