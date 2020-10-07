@@ -32,6 +32,20 @@ namespace EggDrop_Kiosk
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             CtrlHome.BtnOrder.Click += BtnOrder_Click;
+            CtrlPay.BtnCard.Click += BtnCard_Click;
+            CtrlPay.BtnCash.Click += BtnCash_Click;
+        }
+
+
+        private void BtnCard_Click(object sender, RoutedEventArgs e)
+        {
+            CtrlPay.Visibility = Visibility.Collapsed;
+            CtrlCard.Visibility = Visibility.Visible;
+        }
+        private void BtnCash_Click(object sender, RoutedEventArgs e)
+        {
+            CtrlPay.Visibility = Visibility.Collapsed;
+            CtrlCash.Visibility = Visibility.Visible;
         }
 
         private void BtnOrder_Click(object sender, RoutedEventArgs e)

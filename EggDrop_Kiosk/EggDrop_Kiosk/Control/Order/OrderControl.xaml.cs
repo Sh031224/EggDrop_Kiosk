@@ -35,5 +35,18 @@ namespace EggDrop_Kiosk.Control.Order
                 lbCategories.ItemsSource = App.orderData.orderViewModel.CategoryModels;
             }));
         }
+
+        private void dClock_Loaded(object sender, RoutedEventArgs e)
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            dClock.Text = DateTime.Now.ToString();
+        }
     }
 }
