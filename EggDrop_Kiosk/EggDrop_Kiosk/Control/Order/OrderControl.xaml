@@ -12,12 +12,15 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{Binding Source={x:Static wookoa:DateTime.Now}, StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}', Mode=OneWay}"
-                   FontSize="54"
+        <Grid Grid.Row="0" Background="#F5F5F5">
+            <TextBlock Name="dClock"
+                   FontSize="36"
+                   FontWeight="bold"
                    VerticalAlignment="Center"
                    Padding="50 20 0 20"
-                   Background="Gray"
-                   Foreground="white"/>
+                   Foreground="#000000"
+                   Loaded="dClock_Loaded"/>
+        </Grid>
         <ListBox x:Name="lbCategory" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Top" BorderBrush="Transparent" Margin="136,2,-136,0" Grid.Row="1">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>

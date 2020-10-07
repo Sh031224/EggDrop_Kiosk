@@ -61,6 +61,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Control\Card\CardControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Cash\CashControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Control\Home\HomeControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -87,6 +95,12 @@
     </Compile>
     <Compile Include="Control\Admin\AdminControl.xaml.cs">
       <DependentUpon>AdminControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Card\CardControl.xaml.cs">
+      <DependentUpon>CardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Cash\CashControl.xaml.cs">
+      <DependentUpon>CashControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\Home\HomeControl.xaml.cs">
       <DependentUpon>HomeControl.xaml</DependentUpon>
