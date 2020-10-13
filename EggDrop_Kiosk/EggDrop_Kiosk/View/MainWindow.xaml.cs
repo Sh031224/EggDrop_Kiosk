@@ -36,6 +36,20 @@ namespace EggDrop_Kiosk
             CtrlPay.BtnCash.Click += BtnCash_Click;
         }
 
+        private void Clock_Loaded(object sender, RoutedEventArgs e)
+        {
+            DispatcherTimer timer = new DispatcherTimer
+            {
+                Interval = new TimeSpan(0, 0, 1)
+            };
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Clock.Text = DateTime.Now.ToString();
+        }
 
         private void BtnCard_Click(object sender, RoutedEventArgs e)
         {
@@ -63,5 +77,7 @@ namespace EggDrop_Kiosk
         {
             App.orderData.orderViewModel.LoadData();
         }
+
+       
     }
 }
