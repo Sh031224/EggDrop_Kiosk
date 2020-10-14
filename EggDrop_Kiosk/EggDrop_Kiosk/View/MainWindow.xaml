@@ -15,12 +15,27 @@
         Title="MainWindow" Width="1920" Height="1080">
     <Grid>
         <!--작업하는 컨트롤에서 Visibility Collapsed 에서 Visible 로 바꾸고 이거는 커밋하지마-->
-        <control_Home:HomeControl x:Name="CtrlHome" Visibility="Visible" />
-        <control_Order:OrderControl x:Name="CtrlOrder" Visibility="Collapsed" />
-        <control_Pay:PayControl x:Name="CtrlPay" Visibility="Collapsed" />
-        <control_Card:CardControl x:Name="CtrlCard" Visibility="Collapsed" />
-        <control_Cash:CashControl x:Name="CtrlCash" Visibility="Collapsed" />
-        <control_Table:TableControl x:Name="CtrlTable" Visibility="Collapsed" />
-        <control_Admin:AdminControl x:Name="CtrlAdmin" Visibility="Collapsed" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#F5F5F5">
+            <TextBlock Name="Clock"
+                   FontSize="36"
+                   FontWeight="bold"
+                   VerticalAlignment="Center"
+                   Padding="50 20 0 20"
+                   Foreground="#000000"
+                   Loaded="Clock_Loaded"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <control_Home:HomeControl x:Name="CtrlHome" Visibility="Visible" />
+            <control_Order:OrderControl x:Name="CtrlOrder" Visibility="Collapsed" />
+            <control_Pay:PayControl x:Name="CtrlPay" Visibility="Collapsed" />
+            <control_Card:CardControl x:Name="CtrlCard" Visibility="Collapsed" />
+            <control_Cash:CashControl x:Name="CtrlCash" Visibility="Collapsed" />
+            <control_Table:TableControl x:Name="CtrlTable" Visibility="Collapsed" />
+            <control_Admin:AdminControl x:Name="CtrlAdmin" Visibility="Collapsed" />
+        </Grid>
     </Grid>
 </Window>

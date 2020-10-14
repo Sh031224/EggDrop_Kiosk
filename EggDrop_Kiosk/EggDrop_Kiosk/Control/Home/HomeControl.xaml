@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EggDrop_Kiosk.Control.Home"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="900" d:DesignWidth="1920">
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="7*"/>
@@ -21,7 +21,7 @@
                    Height="70"
                    FontSize="46"
                    FontWeight="DemiBold"
-                   Margin="0 60 0 0"
+                   Margin="544,30,543,0"
                    HorizontalAlignment="Center"/>
             <TextBlock Grid.Row="1" Text="맛있는 샌드위치가 당신을 기다리고 있어요."
                    Height="70"
