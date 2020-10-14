@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EggDrop_Kiosk.Core.Order.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,23 +31,15 @@ namespace EggDrop_Kiosk.Control.Order
 
         private void OrderControl_Loaded(object sender, RoutedEventArgs e)
         {
+            
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate ()
             {
                 lbCategories.ItemsSource = App.orderData.orderViewModel.CategoryModels;
+                lbCategories.SelectedIndex = 0;
+
+                lbMenus.ItemsSource = App.orderData.orderViewModel.ProductModels;
             }));
-        }
 
-        private void dClock_Loaded(object sender, RoutedEventArgs e)
-        {
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Tick += Timer_Tick;
-            timer.Start();
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            dClock.Text = DateTime.Now.ToString();
         }
     }
 }
