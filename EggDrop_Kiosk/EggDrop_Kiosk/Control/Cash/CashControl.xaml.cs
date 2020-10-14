@@ -23,6 +23,7 @@ namespace EggDrop_Kiosk.Control.Cash
         public CashControl()
         {
             InitializeComponent();
+
         }
     }
 }
