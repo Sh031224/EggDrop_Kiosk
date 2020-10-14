@@ -30,9 +30,12 @@ namespace EggDrop_Kiosk
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            CtrlHome.BtnAdmin.Click += BtnAdmin_Click;
             CtrlHome.BtnOrder.Click += BtnOrder_Click;
             CtrlPay.BtnCard.Click += BtnCard_Click;
             CtrlPay.BtnCash.Click += BtnCash_Click;
+
+            //String timeStamp = 
         }
 
 
@@ -52,6 +55,12 @@ namespace EggDrop_Kiosk
             // 시작 페이지에서 주문 페이지로 이동
             CtrlHome.Visibility = Visibility.Collapsed;
             CtrlOrder.Visibility = Visibility.Visible;
+        }
+
+        private void BtnAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            CtrlHome.Visibility = Visibility.Collapsed;
+            CtrlAdmin.Visibility = Visibility.Visible;
         }
     }
 }
