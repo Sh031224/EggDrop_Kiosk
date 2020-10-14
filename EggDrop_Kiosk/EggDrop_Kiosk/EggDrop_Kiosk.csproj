@@ -157,6 +157,18 @@
     <Content Include="Assets\Home\home-video.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Assets\Order\Coffee\Americano.jpg" />
+    <Resource Include="Assets\Order\Coffee\Cafe Latte.jpg" />
+    <Resource Include="Assets\Order\Coffee\Cappuccino.jpg" />
+    <Resource Include="Assets\Order\Coffee\Dark Chocolate Mocha.jpg" />
+    <Resource Include="Assets\Order\Coffee\Homemade Latte.jpg" />
+    <Resource Include="Assets\Order\Coffee\Jeju Matcha Latte.jpg" />
+    <Resource Include="Assets\Order\Coffee\Milk Chocolate.jpg" />
+    <Resource Include="Assets\Order\Coffee\Shakerato.jpg" />
+    <Resource Include="Assets\Order\Coffee\Vanilla Latte.jpg" />
+    <Resource Include="Assets\Order\Juice\Grapefruit Juice.jpg" />
+    <Resource Include="Assets\Order\Juice\Mango Juice.jpg" />
+    <Resource Include="Assets\Order\Juice\Orange Juice.jpg" />
     <Resource Include="Assets\Order\Sandwich\American Ham Cheese.PNG" />
     <Resource Include="Assets\Order\Sandwich\Avo Holic.PNG" />
     <Resource Include="Assets\Order\Sandwich\Bacon Dobuble Cheese.PNG" />

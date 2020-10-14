@@ -31,6 +31,9 @@ namespace EggDrop_Kiosk
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            // 데이터 로드
+            App.orderData.orderViewModel.LoadData();
+
             CtrlHome.BtnOrder.Click += BtnOrder_Click;
             CtrlPay.BtnCard.Click += BtnCard_Click;
             CtrlPay.BtnCash.Click += BtnCash_Click;
@@ -67,17 +70,7 @@ namespace EggDrop_Kiosk
             // 시작 페이지에서 주문 페이지로 이동
             CtrlHome.Visibility = Visibility.Collapsed;
             CtrlOrder.Visibility = Visibility.Visible;
-
-            Init();
-            
-            // App.orderData.LoadDataAsync();
         }
-
-        private void Init()
-        {
-            App.orderData.orderViewModel.LoadData();
-        }
-
        
     }
 }
