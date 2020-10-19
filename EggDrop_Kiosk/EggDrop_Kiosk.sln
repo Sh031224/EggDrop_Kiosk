@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EggDrop_Kiosk.Core.Table", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EggDrop_Kiosk.Core.Admin", "EggDrop_Kiosk.Core.Admin\EggDrop_Kiosk.Core.Admin.csproj", "{F9C953D0-1511-46E4-AF23-FED0BAD406A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KQRCode", "KQRCode\KQRCode.csproj", "{62F1B37E-4BB2-442B-99A7-36279C5C0F3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F9C953D0-1511-46E4-AF23-FED0BAD406A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9C953D0-1511-46E4-AF23-FED0BAD406A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9C953D0-1511-46E4-AF23-FED0BAD406A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62F1B37E-4BB2-442B-99A7-36279C5C0F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62F1B37E-4BB2-442B-99A7-36279C5C0F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62F1B37E-4BB2-442B-99A7-36279C5C0F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62F1B37E-4BB2-442B-99A7-36279C5C0F3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
