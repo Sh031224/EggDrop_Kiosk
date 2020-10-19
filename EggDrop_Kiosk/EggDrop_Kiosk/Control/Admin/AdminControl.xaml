@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:EggDrop_Kiosk.Control.Admin"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Background="#ffffff">
             
     </Grid>
 </UserControl>
