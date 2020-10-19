@@ -30,6 +30,14 @@
                    HorizontalAlignment="Center"
                    Foreground="Gray"/>
         </StackPanel>
+        <Button Name="BtnAdmin" Content="관리자"
+                Click="BtnAdmin_Click"
+                Grid.Row="1"
+                FontSize="30" FontWeight="Bold"
+                Margin="0 0 40 40"
+                HorizontalAlignment="Right"
+                Width="200"
+                Height="60"/>
         <Button Grid.Row="1" Height="150"
                 VerticalAlignment="Bottom"
                 Content="주문하기"
