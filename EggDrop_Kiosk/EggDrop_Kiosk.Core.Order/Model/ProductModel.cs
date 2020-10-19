@@ -37,11 +37,23 @@ namespace EggDrop_Kiosk.Core.Order.Model
             set => SetProperty(ref _price, value);
         }
 
+
         private int _salePercent;
         public int SalePercent
         {
             get => _salePercent;
-            set => SetProperty(ref _salePercent, value);
+            set
+            {
+                SetProperty(ref _salePercent, value);
+                _salePrice = Price - (SalePercent / 100 * Price);
+            }
+        }
+
+        private int _salePrice;
+        public int SalePrice
+        {
+            get => _salePrice;
+            set => SetProperty(ref _salePrice, value);
         }
 
         private int _count;
@@ -49,6 +61,13 @@ namespace EggDrop_Kiosk.Core.Order.Model
         {
             get => _count;
             set => SetProperty(ref _count, value);
+        }
+
+        private int _page;
+        public int Page
+        {
+            get => _page;
+            set => SetProperty(ref _page, value);
         }
     }
 }

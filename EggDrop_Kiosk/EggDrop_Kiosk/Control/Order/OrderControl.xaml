@@ -29,12 +29,13 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*" />
                         <RowDefinition Height="8*" />
-                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1.5*" />
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Row="0">
                         <ListBox x:Name="lbCategories"
                                  FontSize="16"
+                                 SelectionChanged="lbCategories_SelectionChanged"
                                  FontWeight="SemiBold"
                                  VerticalAlignment="Top"
                                  BorderBrush="Transparent"
@@ -118,13 +119,15 @@
 
                         <ListBox x:Name="lbMenus"
                                  FontSize="16"
+                                 SelectionChanged="lbMenus_SelectionChanged"
                                  FontWeight="SemiBold"
                                  VerticalAlignment="Top"
                                  BorderBrush="Transparent"
                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                             <ListBox.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <WrapPanel />
+                                    <UniformGrid Columns="3"
+                                                 Rows="2" />
                                 </ItemsPanelTemplate>
                             </ListBox.ItemsPanel>
                             <ListBox.ItemTemplate>
@@ -136,7 +139,8 @@
                                         </Grid.RowDefinitions>
 
                                         <Grid Grid.Row="0">
-                                            <Image Width="250" Source="{Binding ImagePath}" />
+                                            <Image Width="250"
+                                                   Source="{Binding ImagePath}" />
                                         </Grid>
 
                                         <Grid Grid.Row="1">
@@ -144,7 +148,7 @@
                                                 <TextBlock Text="{Binding Name}"
                                                            HorizontalAlignment="Center"
                                                            FontSize="20" />
-                                                <TextBlock Text="{Binding Price}"
+                                                <TextBlock Text="{Binding SalePrice}"
                                                            HorizontalAlignment="Center"
                                                            FontSize="16" />
                                             </StackPanel>
@@ -154,10 +158,48 @@
                             </ListBox.ItemTemplate>
                         </ListBox>
                     </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Button Content="이전"
+                                x:Name="BtnPrevPage"
+                                HorizontalAlignment="Left"
+                                Margin="84,57,0,0"
+                                VerticalAlignment="Top"
+                                Width="114"
+                                Click="BtnPrevPage_Click"
+                                Background="#FFDEDEDE"
+                                Height="53" />
+                        <Button Content="다음"
+                                x:Name="BtnNextPage"
+                                HorizontalAlignment="Left"
+                                Click="BtnNextPage_Click"
+                                Margin="690,57,0,0"
+                                VerticalAlignment="Top"
+                                Width="114"
+                                Background="#FFDEDEDE"
+                                Height="53" />
+
+                    </Grid>
                 </Grid>
 
                 <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="7*" />
+                        <RowDefinition Height="2.5*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
 
+                    <Grid Grid.Row="0">
+                        <ListView Margin="10" Name="lvOrdered">
+			                <ListView.View>
+				                <GridView>
+				                 	<GridViewColumn Header="메뉴" Width="120" DisplayMemberBinding="{Binding Name}" />
+				                	<GridViewColumn Header="수량" Width="50" DisplayMemberBinding="{Binding Count}" />
+				                	<GridViewColumn Header="가격" Width="150" DisplayMemberBinding="{Binding SalePrice}" />
+				               </GridView>
+		                	</ListView.View>
+	                	</ListView>
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>
