@@ -23,6 +23,12 @@ namespace EggDrop_Kiosk.Control.Card
         public CardControl()
         {
             InitializeComponent();
+            webcam.CameraIndex = 0;
+        }
+
+        private void webcam_QrDecoded(object sender, string e)
+        {
+            tbRecog.Text = e;
         }
     }
 }
