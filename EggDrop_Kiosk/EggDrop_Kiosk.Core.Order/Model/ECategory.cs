@@ -10,6 +10,6 @@ namespace EggDrop_Kiosk.Core.Order.Model
     {
         SANDWICH,
         COFFEE,
-        LATTE
+        JUICE
     }
 }
