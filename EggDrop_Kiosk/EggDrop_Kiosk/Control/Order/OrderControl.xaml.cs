@@ -39,7 +39,6 @@ namespace EggDrop_Kiosk.Control.Order
 
                 lbMenus.ItemsSource = App.orderData.orderViewModel.ProductModels;
             }));
-
         }
     }
 }
