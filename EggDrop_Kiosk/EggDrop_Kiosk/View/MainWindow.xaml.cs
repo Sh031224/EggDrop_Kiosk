@@ -33,7 +33,12 @@ namespace EggDrop_Kiosk
         {
           // 데이터 로드
             App.orderData.orderViewModel.LoadData();
-            
+
+            Console.WriteLine('1');
+
+            Console.WriteLine(App.orderData.orderViewModel.CategoryModels);
+
+
             CtrlHome.BtnAdmin.Click += BtnAdmin_Click;
             CtrlHome.BtnOrder.Click += BtnOrder_Click;
             CtrlPay.BtnCard.Click += BtnCard_Click;

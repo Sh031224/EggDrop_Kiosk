@@ -9,18 +9,18 @@ namespace EggDrop_Kiosk.Core.Order.Model
 {
     public class CategoryModel: BindableBase
     {
+        private int _idx;
+        public int Idx
+        {
+            get => _idx;
+            set => SetProperty(ref _idx, value);
+        }
+
         private string _name;
         public string Name
         {
             get => _name;
             set => SetProperty(ref _name, value);
-        }
-
-        private ECategory _category;
-        public ECategory Category
-        {
-            get => _category;
-            set => SetProperty(ref _category, value);
         }
 
     }
