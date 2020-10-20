@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="EggDrop_Kiosk.Control.Complete.CompleteControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EggDrop_Kiosk.Control.Complete"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#ffffff">
+        <StackPanel HorizontalAlignment="center">
+            <TextBlock Text="주문 완료!" FontSize="36" FontWeight="bold" TextAlignment="Center" Margin="0 30 0 12"/>
+            <TextBlock Text="조금만 기다려주세요." FontSize="16" TextAlignment="Center"/>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <TextBlock Text="총 결제 금액: " FontSize="24" FontWeight="Bold" />
+            <TextBlock Text="주문 번호: " FontSize="24" FontWeight="Bold" />
+        </StackPanel>
+        <Button x:Name="BtnComplete"
+                Content="홈으로 이동" Height="60"
+                VerticalAlignment="Bottom"
+                FontSize="16"
+                FontWeight="Bold"
+                Foreground="#ffffff"
+                Background="#FF4646"/>
+    </Grid>
+</UserControl>

@@ -43,7 +43,9 @@ namespace EggDrop_Kiosk
             CtrlHome.BtnOrder.Click += BtnOrder_Click;
             CtrlPay.BtnCard.Click += BtnCard_Click;
             CtrlPay.BtnCash.Click += BtnCash_Click;
+            CtrlComplete.BtnComplete.Click += BtnComplete_Click;
         }
+
 
         private void Clock_Loaded(object sender, RoutedEventArgs e)
         {
@@ -83,5 +85,12 @@ namespace EggDrop_Kiosk
             CtrlHome.Visibility = Visibility.Collapsed;
             CtrlAdmin.Visibility = Visibility.Visible;
         }
+        private void BtnComplete_Click(object sender, RoutedEventArgs e)
+        {
+            CtrlComplete.Visibility = Visibility.Collapsed;
+            CtrlHome.Visibility = Visibility.Visible;
+        }
+
+        
     }
 }
