@@ -262,4 +262,4 @@ home-video.mp4
 __pycache__/
 *.pyc
 
-EggDrop_Kiosk/EggDrop.Core.Util/Config
+EggDrop_Kiosk/EggDrop_Kiosk.Core.Util/Config/
