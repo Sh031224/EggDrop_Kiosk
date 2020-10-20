@@ -9,6 +9,13 @@ namespace EggDrop_Kiosk.Core.Order.Model
 {
     public class ProductModel: BindableBase
     {
+        private int _idx;
+        public int Idx
+        {
+            get => _idx;
+            set => SetProperty(ref _idx, value);
+        }
+
         private string _name;
         public string Name
         {
@@ -23,11 +30,11 @@ namespace EggDrop_Kiosk.Core.Order.Model
             set => SetProperty(ref _imagePath, value);
         }
 
-        private ECategory _category;
-        public ECategory Category
+        private int _categoryIdx;
+        public int CategoryIdx
         {
-            get => _category;
-            set => SetProperty(ref _category, value);
+            get => _categoryIdx;
+            set => SetProperty(ref _categoryIdx, value);
         }
 
         private int _price;
