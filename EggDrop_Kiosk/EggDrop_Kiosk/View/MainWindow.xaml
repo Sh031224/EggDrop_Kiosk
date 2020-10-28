@@ -11,6 +11,7 @@
         xmlns:control_Cash="clr-namespace:EggDrop_Kiosk.Control.Cash"
         xmlns:control_Table="clr-namespace:EggDrop_Kiosk.Control.Table"
         xmlns:control_Admin="clr-namespace:EggDrop_Kiosk.Control.Admin"
+        xmlns:control_Complete="clr-namespace:EggDrop_Kiosk.Control.Complete"
         mc:Ignorable="d"
         Title="MainWindow" Width="1920" Height="1080">
     <Grid>
@@ -47,6 +48,7 @@
             <control_Cash:CashControl x:Name="CtrlCash" Visibility="Collapsed" />
             <control_Table:TableControl x:Name="CtrlTable" Visibility="Collapsed" />
             <control_Admin:AdminControl x:Name="CtrlAdmin" Visibility="Collapsed" />
+            <control_Complete:CompleteControl x:Name="CtrlComplete" Visibility="Visible" />
         </Grid>
     </Grid>
 </Window>

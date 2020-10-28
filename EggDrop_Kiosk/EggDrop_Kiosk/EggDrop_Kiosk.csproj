@@ -75,6 +75,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Control\Complete\CompleteControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Control\Home\HomeControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -107,6 +111,9 @@
     </Compile>
     <Compile Include="Control\Cash\CashControl.xaml.cs">
       <DependentUpon>CashControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Complete\CompleteControl.xaml.cs">
+      <DependentUpon>CompleteControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\Home\HomeControl.xaml.cs">
       <DependentUpon>HomeControl.xaml</DependentUpon>

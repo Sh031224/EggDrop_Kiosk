@@ -39,16 +39,18 @@ using System.Windows.Shapes;
 using System.Windows.Shell;
 
 
-namespace EggDrop_Kiosk {
-    
-    
+namespace EggDrop_Kiosk
+{
+
+
     /// <summary>
     /// MainWindow
     /// </summary>
-    public partial class MainWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
-        
-        
-        #line 23 "..\..\..\View\MainWindow.xaml"
+    public partial class MainWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector
+    {
+
+
+#line 23 "..\..\..\View\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock Clock;
         
@@ -123,45 +125,49 @@ namespace EggDrop_Kiosk {
         #line 49 "..\..\..\View\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal EggDrop_Kiosk.Control.Admin.AdminControl CtrlAdmin;
-        
-        #line default
-        #line hidden
-        
+
+#line default
+#line hidden
+
         private bool _contentLoaded;
-        
+
         /// <summary>
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
-        public void InitializeComponent() {
-            if (_contentLoaded) {
+        public void InitializeComponent()
+        {
+            if (_contentLoaded)
+            {
                 return;
             }
             _contentLoaded = true;
             System.Uri resourceLocater = new System.Uri("/EggDrop_Kiosk;component/view/mainwindow.xaml", System.UriKind.Relative);
-            
-            #line 1 "..\..\..\View\MainWindow.xaml"
+
+#line 1 "..\..\..\View\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
-            
-            #line default
-            #line hidden
+
+#line default
+#line hidden
         }
-        
+
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal System.Delegate _CreateDelegate(System.Type delegateType, string handler) {
+        internal System.Delegate _CreateDelegate(System.Type delegateType, string handler)
+        {
             return System.Delegate.CreateDelegate(delegateType, this, handler);
         }
-        
+
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-        void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
+        void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target)
+        {
             switch (connectionId)
             {
             case 1:
@@ -209,6 +215,8 @@ namespace EggDrop_Kiosk {
             }
             this._contentLoaded = true;
         }
+
+        internal EggDrop_Kiosk.Control.Complete.CompleteControl CtrlComplete;
     }
 }
 

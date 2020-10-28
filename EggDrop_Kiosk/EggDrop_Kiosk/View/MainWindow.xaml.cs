@@ -43,6 +43,7 @@ namespace EggDrop_Kiosk
             CtrlHome.BtnOrder.Click += BtnOrder_Click;
             CtrlPay.BtnCard.Click += BtnCard_Click;
             CtrlPay.BtnCash.Click += BtnCash_Click;
+            CtrlComplete.BtnComplete.Click += BtnComplete_Click;
         }
 
         private void SetCustomControls()
@@ -110,5 +111,12 @@ namespace EggDrop_Kiosk
             }
             
         }
+        private void BtnComplete_Click(object sender, RoutedEventArgs e)
+        {
+            CtrlComplete.Visibility = Visibility.Collapsed;
+            CtrlHome.Visibility = Visibility.Visible;
+        }
+
+        
     }
 }
