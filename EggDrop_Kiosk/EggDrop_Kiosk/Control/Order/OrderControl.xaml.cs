@@ -48,7 +48,6 @@ namespace EggDrop_Kiosk.Control.Order
                 dgOrderedProducts.ItemsSource = App.orderData.orderViewModel.OrderedProductModels;
             }));
         }
-
         // 카테고리 메뉴 변경
         private void lbCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

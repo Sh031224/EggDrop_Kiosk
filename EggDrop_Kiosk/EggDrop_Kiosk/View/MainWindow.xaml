@@ -41,14 +41,14 @@
            
         </Grid>
         <Grid Grid.Row="1">
-            <control_Home:HomeControl x:Name="CtrlHome" Visibility="Collapsed" />
+            <control_Home:HomeControl x:Name="CtrlHome" Visibility="Visible" />
             <control_Order:OrderControl x:Name="CtrlOrder" Visibility="Collapsed" />
             <control_Pay:PayControl x:Name="CtrlPay" Visibility="Collapsed" />
             <control_Card:CardControl x:Name="CtrlCard" Visibility="Collapsed" />
             <control_Cash:CashControl x:Name="CtrlCash" Visibility="Collapsed" />
             <control_Table:TableControl x:Name="CtrlTable" Visibility="Collapsed" />
             <control_Admin:AdminControl x:Name="CtrlAdmin" Visibility="Collapsed" />
-            <control_Complete:CompleteControl x:Name="CtrlComplete" Visibility="Visible" />
+            <control_Complete:CompleteControl x:Name="CtrlComplete" Visibility="Collapsed" />
         </Grid>
     </Grid>
 </Window>

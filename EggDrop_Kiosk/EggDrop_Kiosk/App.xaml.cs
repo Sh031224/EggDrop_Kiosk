@@ -32,7 +32,7 @@ namespace EggDrop_Kiosk
             DateTime ExitTime = DateTime.Now;
             String RunTime = (ExitTime - StartTime).ToString("h'시간 'm'분 's'초'");
 
-            MessageBox.Show("프로그램 구동 시간: " + RunTime);
+            //MessageBox.Show("프로그램 구동 시간: " + RunTime);
         }
     }
 }
