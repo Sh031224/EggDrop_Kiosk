@@ -30,21 +30,26 @@
                    HorizontalAlignment="Center"
                    Foreground="Gray"/>
         </StackPanel>
-        <Button Name="BtnAdmin" Content="관리자"
-                Click="BtnAdmin_Click"
+        <Button x:Name="BtnAdmin" Content="관리자"
                 Grid.Row="1"
                 FontSize="30" FontWeight="Bold"
                 Margin="0 0 40 40"
                 HorizontalAlignment="Right"
                 Width="200"
                 Height="60"/>
-        <Button Grid.Row="1" Height="150"
+        <Button Grid.Row="1" Height="100"
                 VerticalAlignment="Bottom"
                 Content="주문하기"
                 FontSize="42"
                 FontWeight="Regular"
-                Name="BtnOrder"
-                Foreground="white"
-                Background="#FF4646"/>
+                x:Name="BtnOrder">
+            <Button.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#FF4646" />
+                    <Setter Property="Foreground" Value="#ffffff" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </UserControl>

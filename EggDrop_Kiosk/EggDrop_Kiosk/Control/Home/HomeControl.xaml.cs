@@ -40,10 +40,5 @@ namespace EggDrop_Kiosk.Control.Home
             EggDropVideo.Position = TimeSpan.FromSeconds(0);
             EggDropVideo.Play();
         }
-
-        private void BtnAdmin_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

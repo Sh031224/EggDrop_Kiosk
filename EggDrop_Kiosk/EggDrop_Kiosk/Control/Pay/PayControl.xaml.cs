@@ -24,5 +24,10 @@ namespace EggDrop_Kiosk.Control.Pay
         {
             InitializeComponent();
         }
+
+        private void lvOrdered_Loaded(object sender, RoutedEventArgs e)
+        {
+            lvOrdered.ItemsSource = App.orderData.orderViewModel.OrderedProductModels;
+        }
     }
 }

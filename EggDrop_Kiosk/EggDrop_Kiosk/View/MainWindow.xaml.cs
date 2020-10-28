@@ -31,7 +31,7 @@ namespace EggDrop_Kiosk
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-          // 데이터 로드
+            // 데이터 로드
             App.orderData.orderViewModel.LoadData();
 
             Console.WriteLine('1');
@@ -44,8 +44,48 @@ namespace EggDrop_Kiosk
             CtrlPay.BtnCard.Click += BtnCard_Click;
             CtrlPay.BtnCash.Click += BtnCash_Click;
             CtrlComplete.BtnComplete.Click += BtnComplete_Click;
+            CtrlOrder.BtnNext.Click += BtnNext_Click;
+            CtrlPay.BtnPrevious.Click += BtnPrevious_Click;
+            CtrlOrder.BtnPrevious.Click += BtnPrevious_Click1;
+            CtrlCard.BtnPrevious.Click += BtnPrevious_Click2;
+            CtrlCash.BtnPrevious.Click += BtnPrevious_Click3;
         }
 
+        private void BtnPrevious_Click3(object sender, RoutedEventArgs e)
+        {
+            CtrlCash.Visibility = Visibility.Collapsed;
+            CtrlPay.Visibility = Visibility.Visible;
+        }
+
+        private void BtnPrevious_Click2(object sender, RoutedEventArgs e)
+        {
+            CtrlCard.Visibility = Visibility.Collapsed;
+            CtrlPay.Visibility = Visibility.Visible;
+        }
+
+        private void BtnPrevious_Click1(object sender, RoutedEventArgs e)
+        {
+            CtrlOrder.Visibility = Visibility.Collapsed;
+            CtrlHome.Visibility = Visibility.Visible;
+        }
+
+        private void BtnPrevious_Click(object sender, RoutedEventArgs e)
+        {
+            CtrlPay.Visibility = Visibility.Collapsed;
+            CtrlOrder.Visibility = Visibility.Visible;
+        }
+
+        private void BtnNext_Click(object sender, RoutedEventArgs e)
+        {
+            if (App.orderData.orderViewModel.OrderedProductModels.Count() == 0)
+            {
+                MessageBox.Show("상품이 없습니다.");
+                return;
+            }
+
+            CtrlOrder.Visibility = Visibility.Collapsed;
+            CtrlPay.Visibility = Visibility.Visible;
+        }
 
         private void Clock_Loaded(object sender, RoutedEventArgs e)
         {
@@ -91,6 +131,5 @@ namespace EggDrop_Kiosk
             CtrlHome.Visibility = Visibility.Visible;
         }
 
-        
     }
 }
