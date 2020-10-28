@@ -7,24 +7,39 @@
              xmlns:local="clr-namespace:EggDrop_Kiosk.Control.Card"
              mc:Ignorable="d" 
              xmlns:qrcode="clr-namespace:KQRCode;assembly=KQRCode"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="900" d:DesignWidth="1920">
     <Grid Background="#ffffff">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="카드 결제를 선택하셨습니다." FontSize="24" FontWeight="black"
+            <TextBlock Text="카드 결제를 선택하셨습니다."
+                       FontSize="40" FontWeight="black"
                        Margin="0 0 0 10"
                        TextAlignment="Center"/>
-            <TextBlock Text="카메라에 QR코드를 대어주세요." TextAlignment="Center"
-                       FontSize="16" FontWeight="Regular" Margin="0 0 0 10"/>
-            <qrcode:KQRWebCam x:Name="webcam" QrDecoded="webcam_QrDecoded"
-                          Width="250" Height="250"/>
+            <TextBlock Text="카메라에 QR코드를 인식하세요."
+                       TextAlignment="Center"
+                       FontSize="28" FontWeight="Regular"
+                       Margin="0 0 0 10"/>
+            <TextBox x:Name="tbRecog"
+                       Margin="12,12,12,12"
+                       Text="여기에 인식된 QR코드 값이 표시됩니다."
+                       Height="30"
+                       VerticalAlignment="Bottom"
+                       HorizontalContentAlignment="Stretch"
+                       VerticalContentAlignment="Center" />
+            <qrcode:KQRWebCam x:Name="webcam"
+                              Width="250" Height="200"/>
         </StackPanel>
-        <TextBox x:Name="tbRecog"
-                 Margin="12,12,12,12"
-                 Text="인식된 QR코드 값"
-                 Height="30"
-                 VerticalAlignment="Bottom"
-                 HorizontalContentAlignment="Stretch"
-                 VerticalContentAlignment="Center">
-        </TextBox>
+        <Button x:Name="BtnPrevious" Content="이전"
+                        FontSize="26"
+                    Width="500" Height="60"
+                    VerticalAlignment="Bottom"
+                    Margin="0 0 0 14">
+            <Button.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#FF4646" />
+                    <Setter Property="Foreground" Value="#ffffff" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </base:CustomControlModel>
