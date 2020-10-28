@@ -12,6 +12,9 @@ namespace EggDrop_Kiosk.Core.Order.Service
 {
     class ProductService
     {
+        // 한 페이지 당 상품의 개수
+        private const int PRODUCT_COUNT_FOR_PAGE = 6;
+
         public ObservableCollection<ProductModel> GetProducts()
         {
             DbConnecion dbConnection = new DbConnecion();
@@ -37,8 +40,7 @@ namespace EggDrop_Kiosk.Core.Order.Service
                     categoryIdx = Convert.ToInt32(reader["category_idx"]);
                     idx = 1;
                 }
-                // 6 개씩 페이지 만들기
-                int page = Convert.ToInt32(idx / 7) + 1;
+                int page = Convert.ToInt32(idx / (PRODUCT_COUNT_FOR_PAGE + 1)) + 1;
 
                 ProductModel product = new ProductModel()
                 {
@@ -48,6 +50,7 @@ namespace EggDrop_Kiosk.Core.Order.Service
                     Price = Convert.ToInt32(reader["price"]),
                     SalePercent = Convert.ToInt32(reader["sale_percent"]),
                     ImagePath = Convert.ToString(reader["image_path"]),
+                    Count = 1,
                     Page = page
                 };
 
