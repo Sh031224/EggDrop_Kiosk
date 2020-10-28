@@ -1,4 +1,5 @@
-﻿<UserControl x:Class="EggDrop_Kiosk.Control.Pay.PayControl"
+﻿<base:CustomControlModel xmlns:base="clr-namespace:UIStateManagerLibrary;assembly=UIStateManagerLibrary"
+             x:Class="EggDrop_Kiosk.Control.Pay.PayControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -46,4 +47,4 @@
             </Grid>
         </Grid>
     </Grid>
-</UserControl>
+</base:CustomControlModel>

@@ -1,4 +1,5 @@
-﻿<UserControl x:Class="EggDrop_Kiosk.Control.Home.HomeControl"
+﻿<base:CustomControlModel xmlns:base="clr-namespace:UIStateManagerLibrary;assembly=UIStateManagerLibrary"
+             x:Class="EggDrop_Kiosk.Control.Home.HomeControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -47,4 +48,4 @@
                 Foreground="white"
                 Background="#FF4646"/>
     </Grid>
-</UserControl>
+</base:CustomControlModel>

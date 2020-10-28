@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using UIStateManagerLibrary;
 
 namespace EggDrop_Kiosk
 {
@@ -31,18 +32,33 @@ namespace EggDrop_Kiosk
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            SetCustomControls();
+            SetStartCustomControl();
+
           // 데이터 로드
             App.orderData.orderViewModel.LoadData();
-
-            Console.WriteLine('1');
-
-            Console.WriteLine(App.orderData.orderViewModel.CategoryModels);
 
 
             CtrlHome.BtnAdmin.Click += BtnAdmin_Click;
             CtrlHome.BtnOrder.Click += BtnOrder_Click;
             CtrlPay.BtnCard.Click += BtnCard_Click;
             CtrlPay.BtnCash.Click += BtnCash_Click;
+        }
+
+        private void SetCustomControls()
+        {
+            App.uIStateManager.SetCustomCtrl(CtrlHome, CustomControlType.HOME);
+            App.uIStateManager.SetCustomCtrl(CtrlOrder, CustomControlType.ORDER);
+            App.uIStateManager.SetCustomCtrl(CtrlTable, CustomControlType.TABLE);
+            App.uIStateManager.SetCustomCtrl(CtrlPay, CustomControlType.PAY);
+            App.uIStateManager.SetCustomCtrl(CtrlCard, CustomControlType.PAYCARD);
+            App.uIStateManager.SetCustomCtrl(CtrlCash, CustomControlType.PAYCASH);
+            App.uIStateManager.SetCustomCtrl(CtrlAdmin, CustomControlType.ADMIN);
+        }
+
+        private void SetStartCustomControl()
+        {
+            App.uIStateManager.PushCustomCtrl(CtrlHome);
         }
 
         private void Clock_Loaded(object sender, RoutedEventArgs e)
@@ -62,26 +78,37 @@ namespace EggDrop_Kiosk
 
         private void BtnCard_Click(object sender, RoutedEventArgs e)
         {
-            CtrlPay.Visibility = Visibility.Collapsed;
-            CtrlCard.Visibility = Visibility.Visible;
+            App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCARD);
         }
         private void BtnCash_Click(object sender, RoutedEventArgs e)
         {
-            CtrlPay.Visibility = Visibility.Collapsed;
-            CtrlCash.Visibility = Visibility.Visible;
+            App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCASH);
         }
 
         private void BtnOrder_Click(object sender, RoutedEventArgs e)
         {
-            // 시작 페이지에서 주문 페이지로 이동
-            CtrlHome.Visibility = Visibility.Collapsed;
-            CtrlOrder.Visibility = Visibility.Visible;
+            App.uIStateManager.SwitchCustomControl(CustomControlType.ORDER);
         }
        
         private void BtnAdmin_Click(object sender, RoutedEventArgs e)
         {
-            CtrlHome.Visibility = Visibility.Collapsed;
-            CtrlAdmin.Visibility = Visibility.Visible;
+            App.uIStateManager.SwitchCustomControl(CustomControlType.ADMIN);
+        }
+
+        private void BtnHome_Click(object sender, RoutedEventArgs e)
+        {
+            if (App.orderData.orderViewModel.OrderedProductModels.Count > 0)
+            {
+                if (MessageBox.Show("주문 중인 내용이 모두 사라집니다.", "홈 이동.", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    App.orderData.orderViewModel.OrderedProductModels.Clear();
+                    App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
+                }
+            } else
+            {
+                App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
+            }
+            
         }
     }
 }

@@ -15,13 +15,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using UIStateManagerLibrary;
 
 namespace EggDrop_Kiosk.Control.Order
 {
     /// <summary>
     /// UserControl1.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class OrderControl : UserControl
+    public partial class OrderControl : CustomControlModel
     {
         private int page = 1;
         private int categoryIdx = 1;
@@ -44,7 +45,7 @@ namespace EggDrop_Kiosk.Control.Order
 
                 lbMenus.ItemsSource = orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page);
 
-                lvOrdered.ItemsSource = App.orderData.orderViewModel.OrderedProductModels;
+                dgOrderedProducts.ItemsSource = App.orderData.orderViewModel.OrderedProductModels;
             }));
         }
 
@@ -94,13 +95,22 @@ namespace EggDrop_Kiosk.Control.Order
 
         private void AddOrderedProductModels(ProductModel orderedProductModel)
         {
-            Console.WriteLine(App.orderData.orderViewModel.OrderedProductModels.Where(x => x.Name == orderedProductModel.Name));
             // 이미 있는 상품 클릭시 추가하지 않음
             if (App.orderData.orderViewModel.OrderedProductModels.Where(x => x.Name == orderedProductModel.Name).Count() > 0)
             {
                 return;
             }
             App.orderData.orderViewModel.OrderedProductModels.Add(orderedProductModel);
+        }
+
+        private void PlusOrderedProduct(object sender, RoutedEventArgs e)
+        {
+            App.orderData.orderViewModel.OrderedProductModels.Where(x => x == (ProductModel)dgOrderedProducts.SelectedItem).ToList()[0].Count += 1;
+        }
+
+        private void MinusOrderedProduct(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
