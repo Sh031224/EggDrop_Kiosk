@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UIStateManagerLibrary;
 
 namespace EggDrop_Kiosk.Control.Table
 {
     /// <summary>
     /// TableControl.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class TableControl : UserControl
+    public partial class TableControl : CustomControlModel
     {
         public TableControl()
         {

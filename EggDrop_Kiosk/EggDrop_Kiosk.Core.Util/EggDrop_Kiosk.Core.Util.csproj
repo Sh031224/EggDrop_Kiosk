@@ -89,8 +89,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbConnecion.cs" />
     <Compile Include="Config\DbConfig.cs" />
+    <Compile Include="DbConnecion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

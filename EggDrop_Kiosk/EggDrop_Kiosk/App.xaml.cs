@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using UIStateManagerLibrary;
 
 namespace EggDrop_Kiosk
 {
@@ -14,8 +15,10 @@ namespace EggDrop_Kiosk
     /// </summary>
     public partial class App : Application
     {
+        public static UIStateManager uIStateManager = new UIStateManager();
+    
         public static OrderData orderData = new OrderData();
-        DateTime StartTime = DateTime.Now;
+        public DateTime StartTime = DateTime.Now;
 
         // WPF 전역 예외처리, 어플리케이션 강제 종료 방지
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)

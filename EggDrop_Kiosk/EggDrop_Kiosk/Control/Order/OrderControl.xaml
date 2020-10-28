@@ -1,4 +1,5 @@
-﻿<UserControl x:Class="EggDrop_Kiosk.Control.Order.OrderControl"
+﻿<base:CustomControlModel xmlns:base="clr-namespace:UIStateManagerLibrary;assembly=UIStateManagerLibrary"
+             x:Class="EggDrop_Kiosk.Control.Order.OrderControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -116,7 +117,6 @@
 
                     <Grid Grid.Row="1">
 
-
                         <ListBox x:Name="lbMenus"
                                  FontSize="16"
                                  SelectionChanged="lbMenus_SelectionChanged"
@@ -190,18 +190,55 @@
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Row="0">
-                        <ListView Margin="10" Name="lvOrdered">
-			                <ListView.View>
-				                <GridView>
-				                 	<GridViewColumn Header="메뉴" Width="120" DisplayMemberBinding="{Binding Name}" />
-				                	<GridViewColumn Header="수량" Width="50" DisplayMemberBinding="{Binding Count}" />
-				                	<GridViewColumn Header="가격" Width="150" DisplayMemberBinding="{Binding SalePrice}" />
-				               </GridView>
-		                	</ListView.View>
-	                	</ListView>
+                        <Grid.Resources>
+                            <DataTemplate x:Key="dtCount">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3*" />
+                                        <ColumnDefinition Width="4*" />
+                                        <ColumnDefinition Width="3*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0">
+                                        <Button Width="30"
+                                                Height="30"
+                                                HorizontalContentAlignment="Center"
+                                                VerticalContentAlignment="Center"
+                                                Click="MinusOrderedProduct">-</Button>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <TextBlock HorizontalAlignment="Center"
+                                                   Text="{Binding Count}" />
+                                    </Grid>
+                                    <Grid Grid.Column="2">
+                                        <Button Width="30"
+                                                Height="30"
+                                                HorizontalContentAlignment="Center"
+                                                VerticalContentAlignment="Center"
+                                                Click="PlusOrderedProduct">+</Button>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </Grid.Resources>
+                            <DataGrid x:Name="dgOrderedProducts"
+                                  AutoGenerateColumns="False"
+                                  IsReadOnly="True"
+                                  MinHeight="20">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="메뉴"
+                                                    Binding="{Binding Name}"
+                                                    Width="7*" />
+                                <DataGridTemplateColumn CellTemplate="{StaticResource dtCount}"
+                                                        Header="수량"
+                                                        Width="4*"/>
+                                <DataGridTextColumn Header="가격"
+                                                    Binding="{Binding SalePrice}"
+                                                    Width="3*" />
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </Grid>
                 </Grid>
             </Grid>
         </Grid>
     </Grid>
-</UserControl>
+</base:CustomControlModel>

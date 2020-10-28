@@ -56,18 +56,18 @@ namespace EggDrop_Kiosk.Core.Order.Model
             }
         }
 
-        private int _salePrice;
-        public int SalePrice
-        {
-            get => _salePrice;
-            set => SetProperty(ref _salePrice, value);
-        }
-
         private int _count;
         public int Count
         {
             get => _count;
             set => SetProperty(ref _count, value);
+        }
+
+        private int _salePrice;
+        public int SalePrice
+        {
+            get => _salePrice;
+            set => SetProperty(ref _salePrice, value);
         }
 
         private int _page;

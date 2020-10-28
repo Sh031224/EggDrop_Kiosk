@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UIStateManagerLibrary;
 
 namespace EggDrop_Kiosk.Control.Admin
 {
     /// <summary>
     /// AdminControl.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class AdminControl : UserControl
+    public partial class AdminControl : CustomControlModel
     {
         public AdminControl()
         {

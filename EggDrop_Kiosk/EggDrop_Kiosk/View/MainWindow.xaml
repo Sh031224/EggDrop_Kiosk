@@ -28,6 +28,17 @@
                    Padding="50 20 0 20"
                    Foreground="#000000"
                    Loaded="Clock_Loaded"/>
+
+            <Button x:Name="BtnHome"
+                    Click="BtnHome_Click"
+                    Width="90px"
+                    HorizontalAlignment="Right"
+                    >
+                <Image Source="/Assets/Home/Home.png"
+                       Width="90px"
+                       x:Name="ImgHome" />
+            </Button>
+           
         </Grid>
         <Grid Grid.Row="1">
             <control_Home:HomeControl x:Name="CtrlHome" Visibility="Collapsed" />
