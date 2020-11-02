@@ -1,5 +1,6 @@
 ﻿using EggDrop_Kiosk.Core.Order.Model;
 using EggDrop_Kiosk.Core.Order.Service;
+using EggDrop_Kiosk.Core.Util.lib;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace EggDrop_Kiosk.Core.Order.ViewModel
         private CategoryService categoryService = new CategoryService();
         private ProductService productService = new ProductService();
 
+        public ObservableData<int> OrderedTotalPrice = new ObservableData<int>();
+  
         private ObservableCollection<CategoryModel> _categoryModels = new ObservableCollection<CategoryModel>();
         public ObservableCollection<CategoryModel> CategoryModels
         {
@@ -30,18 +33,29 @@ namespace EggDrop_Kiosk.Core.Order.ViewModel
             set => SetProperty(ref _productModels, value);
         }
 
-        private ObservableCollection<ProductModel> _orderedProductModels = new ObservableCollection<ProductModel>();
-        public ObservableCollection<ProductModel> OrderedProductModels
+        private TrulyObservableCollection<ProductModel> _orderedProductModels = new TrulyObservableCollection<ProductModel>();
+        public TrulyObservableCollection<ProductModel> OrderedProductModels
         {
             get => _orderedProductModels;
             set => SetProperty(ref _orderedProductModels, value);
         }
 
-        // 병렬로 모든 데이터 로드
         public void LoadData()
         {
             LoadCategoryData();
             LoadProductData();
+            OrderedTotalPrice.Value = 0;
+            OrderedProductModels.CollectionChanged += OrderedProductModels_CollectionChanged;
+        }
+
+        private void OrderedProductModels_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            int total = 0;
+            foreach (ProductModel product in OrderedProductModels)
+            {
+                total += product.TotalPrice;
+            }
+            OrderedTotalPrice.Value = total;
         }
 
         // 카테고리 로딩

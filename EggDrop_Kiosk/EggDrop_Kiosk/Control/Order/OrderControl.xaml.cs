@@ -46,6 +46,7 @@ namespace EggDrop_Kiosk.Control.Order
                 lbMenus.ItemsSource = orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page);
 
                 dgOrderedProducts.ItemsSource = App.orderData.orderViewModel.OrderedProductModels;
+                tbTotalPrice.DataContext = App.orderData.orderViewModel.OrderedTotalPrice;
             }));
         }
         // 카테고리 메뉴 변경
@@ -109,7 +110,18 @@ namespace EggDrop_Kiosk.Control.Order
 
         private void MinusOrderedProduct(object sender, RoutedEventArgs e)
         {
+            if (App.orderData.orderViewModel.OrderedProductModels.Where(x => x == (ProductModel)dgOrderedProducts.SelectedItem).ToList()[0].Count != 1)
+            {
+                App.orderData.orderViewModel.OrderedProductModels.Where(x => x == (ProductModel)dgOrderedProducts.SelectedItem).ToList()[0].Count -= 1;
+            }
+        }
 
+        private void DeleteOrderedProduct(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("정말로 지우시겠습니까?", "경고", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                App.orderData.orderViewModel.OrderedProductModels.Remove((ProductModel)dgOrderedProducts.SelectedItem);
+            }
         }
     }
 }
