@@ -187,6 +187,13 @@
 
                     <Grid Grid.Row="0">
                         <Grid.Resources>
+                            <DataTemplate x:Key="dtDelete">
+                                <Button Width="30"
+                                        Height="30"
+                                        HorizontalContentAlignment="Center"
+                                        VerticalContentAlignment="Center"
+                                        Click="DeleteOrderedProduct">X</Button>
+                            </DataTemplate>
                             <DataTemplate x:Key="dtCount">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -228,10 +235,16 @@
                                                         Header="수량"
                                                         Width="4*"/>
                                 <DataGridTextColumn Header="가격"
-                                                    Binding="{Binding SalePrice}"
+                                                    Binding="{Binding TotalPrice}"
                                                     Width="3*" />
+                                <DataGridTemplateColumn CellTemplate="{StaticResource dtDelete}"
+                                                        Header="삭제"
+                                                        Width="2*" />
                             </DataGrid.Columns>
                         </DataGrid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <TextBlock x:Name="tbTotalPrice" Text="{Binding Value, StringFormat={}총 가격: {0}원}" />
                     </Grid>
                     <Grid Grid.Row="2">
                         <StackPanel Orientation="Horizontal"
