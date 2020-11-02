@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace EggDrop_Kiosk.Core.Order.Model
 {
@@ -52,7 +53,7 @@ namespace EggDrop_Kiosk.Core.Order.Model
             set
             {
                 SetProperty(ref _salePercent, value);
-                _salePrice = Price - (SalePercent / 100 * Price);
+                SalePrice = (Price - SalePercent / 100 * Price);
             }
         }
 
@@ -60,7 +61,12 @@ namespace EggDrop_Kiosk.Core.Order.Model
         public int Count
         {
             get => _count;
-            set => SetProperty(ref _count, value);
+            set
+            {
+                SetProperty(ref _count, value);
+                TotalPrice = (Price - (SalePercent / 100 * Price)) * _count;
+                RaisePropertyChanged("TotalPrice");
+            }
         }
 
         private int _salePrice;
@@ -68,6 +74,13 @@ namespace EggDrop_Kiosk.Core.Order.Model
         {
             get => _salePrice;
             set => SetProperty(ref _salePrice, value);
+        }
+
+        private int _totalPrice;
+        public int TotalPrice
+        {
+            get => _totalPrice;
+            set => SetProperty(ref _totalPrice, value);
         }
 
         private int _page;

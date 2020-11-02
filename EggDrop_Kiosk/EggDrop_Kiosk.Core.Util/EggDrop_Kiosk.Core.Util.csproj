@@ -90,7 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\DbConfig.cs" />
-    <Compile Include="DbConnecion.cs" />
+    <Compile Include="lib\DbConnecion.cs" />
+    <Compile Include="lib\ObservableData.cs" />
+    <Compile Include="lib\TrulyObservableCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
