@@ -192,7 +192,7 @@
                                         Height="30"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
-                                        Click="DeleteOrderedProduct">X</Button>
+                                        Click="RemoveOrderedProduct">X</Button>
                             </DataTemplate>
                             <DataTemplate x:Key="dtCount">
                                 <Grid>
@@ -244,7 +244,8 @@
                         </DataGrid>
                     </Grid>
                     <Grid Grid.Row="1">
-                        <TextBlock x:Name="tbTotalPrice" Text="{Binding Value, StringFormat={}총 가격: {0}원}" />
+                        <TextBlock x:Name="tbTotalPrice"
+                                   Text="{Binding OrderedTotalPrice, StringFormat={}총 가격: {0}원}" />
                     </Grid>
                     <Grid Grid.Row="2">
                         <StackPanel Orientation="Horizontal"

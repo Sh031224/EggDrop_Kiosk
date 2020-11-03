@@ -26,7 +26,6 @@ namespace EggDrop_Kiosk.Control.Order
     {
         private int page = 1;
         private int categoryIdx = 1;
-        private OrderViewModel orderViewModel = App.orderData.orderViewModel;
 
         public OrderControl()
         {
@@ -40,13 +39,13 @@ namespace EggDrop_Kiosk.Control.Order
             
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate ()
             {
-                lbCategories.ItemsSource = App.orderData.orderViewModel.CategoryModels;
+                lbCategories.ItemsSource = App.orderViewModel.CategoryModels;
                 lbCategories.SelectedIndex = 0;
 
-                lbMenus.ItemsSource = orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page);
+                lbMenus.ItemsSource = App.orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page);
 
-                dgOrderedProducts.ItemsSource = App.orderData.orderViewModel.OrderedProductModels;
-                tbTotalPrice.DataContext = App.orderData.orderViewModel.OrderedTotalPrice;
+                dgOrderedProducts.ItemsSource = App.orderViewModel.OrderedProductModels;
+                tbTotalPrice.DataContext = App.orderViewModel;
             }));
         }
         // 카테고리 메뉴 변경
@@ -59,26 +58,26 @@ namespace EggDrop_Kiosk.Control.Order
 
             categoryIdx = lbCategories.SelectedIndex + 1;
             page = 1;
-            lbMenus.ItemsSource = orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page);
+            lbMenus.ItemsSource = App.orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page);
         }
 
         private void BtnNextPage_Click(object sender, RoutedEventArgs e)
         {
             // 다음 페이지의 리스트가 존재하는지 확인
-            if (orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page + 1).ToList().Count > 0)
+            if (App.orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page + 1).ToList().Count > 0)
             {
                 page++;
-                lbMenus.ItemsSource = orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page);
+                lbMenus.ItemsSource = App.orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page);
             }
         }
 
         private void BtnPrevPage_Click(object sender, RoutedEventArgs e)
         {
             // 이전 페이지의 리스트가 존재하는지 확인
-            if (orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page - 1).ToList().Count > 0)
+            if (App.orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page - 1).ToList().Count > 0)
             {
                 page--;
-                lbMenus.ItemsSource = orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page);
+                lbMenus.ItemsSource = App.orderViewModel.ProductModels.Where(x => x.CategoryIdx == categoryIdx && x.Page == page);
             }
         }
 
@@ -93,34 +92,25 @@ namespace EggDrop_Kiosk.Control.Order
             }
         }
 
-        private void AddOrderedProductModels(ProductModel orderedProductModel)
-        {
-            // 이미 있는 상품 클릭시 추가하지 않음
-            if (App.orderData.orderViewModel.OrderedProductModels.Where(x => x.Name == orderedProductModel.Name).Count() > 0)
-            {
-                return;
-            }
-            App.orderData.orderViewModel.OrderedProductModels.Add(orderedProductModel);
-        }
-
         private void PlusOrderedProduct(object sender, RoutedEventArgs e)
         {
-            App.orderData.orderViewModel.OrderedProductModels.Where(x => x == (ProductModel)dgOrderedProducts.SelectedItem).ToList()[0].Count += 1;
+            App.orderViewModel.PlusOrderedProductModels((ProductModel)dgOrderedProducts.SelectedItem);
         }
 
         private void MinusOrderedProduct(object sender, RoutedEventArgs e)
         {
-            if (App.orderData.orderViewModel.OrderedProductModels.Where(x => x == (ProductModel)dgOrderedProducts.SelectedItem).ToList()[0].Count != 1)
-            {
-                App.orderData.orderViewModel.OrderedProductModels.Where(x => x == (ProductModel)dgOrderedProducts.SelectedItem).ToList()[0].Count -= 1;
-            }
+            App.orderViewModel.MinusOrderedProductModels((ProductModel)dgOrderedProducts.SelectedItem);
+        }
+        private void AddOrderedProductModels(ProductModel orderedProductModel)
+        {
+            App.orderViewModel.AddOrderedProductModels(orderedProductModel);
         }
 
-        private void DeleteOrderedProduct(object sender, RoutedEventArgs e)
+        private void RemoveOrderedProduct(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("정말로 지우시겠습니까?", "경고", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                App.orderData.orderViewModel.OrderedProductModels.Remove((ProductModel)dgOrderedProducts.SelectedItem);
+                App.orderViewModel.RemoveOrderedProductModels((ProductModel)dgOrderedProducts.SelectedItem);
             }
         }
     }

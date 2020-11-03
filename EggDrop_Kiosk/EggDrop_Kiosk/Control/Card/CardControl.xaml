@@ -26,7 +26,8 @@
                        HorizontalContentAlignment="Stretch"
                        VerticalContentAlignment="Center" />
             <qrcode:KQRWebCam x:Name="webcam"
-                              Width="250" Height="200"/>
+                              Width="250" Height="200"
+                              QrDecoded="webcam_QrDecoded"/>
         </StackPanel>
         <Button x:Name="BtnPrevious" Content="이전"
                         FontSize="26"

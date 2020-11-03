@@ -14,24 +14,16 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UIStateManagerLibrary;
 
-namespace EggDrop_Kiosk.Control.Pay
+namespace EggDrop_Kiosk.Control.Login
 {
     /// <summary>
-    /// PayControl.xaml에 대한 상호 작용 논리
+    /// LoginControl.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class PayControl : CustomControlModel
+    public partial class LoginControl : CustomControlModel
     {
-        public PayControl()
+        public LoginControl()
         {
             InitializeComponent();
-
-            Loaded += PayControl_Loaded; ;
         }
-
-        private void PayControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            lvOrdered.ItemsSource = App.orderViewModel.OrderedProductModels;
-        }
-
     }
 }

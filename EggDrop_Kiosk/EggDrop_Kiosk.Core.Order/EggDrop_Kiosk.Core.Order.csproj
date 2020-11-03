@@ -96,7 +96,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrderData.cs" />
     <Compile Include="Model\CategoryModel.cs" />
     <Compile Include="Model\ProductModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
