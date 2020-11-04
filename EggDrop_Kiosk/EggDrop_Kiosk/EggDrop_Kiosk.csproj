@@ -87,6 +87,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Control\Login\LoginControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Control\Order\OrderControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -121,6 +125,9 @@
     </Compile>
     <Compile Include="Control\Home\HomeControl.xaml.cs">
       <DependentUpon>HomeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Login\LoginControl.xaml.cs">
+      <DependentUpon>LoginControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\Order\OrderControl.xaml.cs">
       <DependentUpon>OrderControl.xaml</DependentUpon>
@@ -191,10 +198,6 @@
     <Resource Include="Assets\Order\Sandwich\Teriyaki BBQ.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Downloads\UIStateManagerLibrary-main\UIStateManagerLibrary-main\UIStateManagerLibrary\UIStateManagerLibrary\UIStateManagerLibrary.csproj">
-      <Project>{6c8ddf0d-6bd6-41de-be05-20777b69a311}</Project>
-      <Name>UIStateManagerLibrary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EggDrop_Kiosk.Core.Admin\EggDrop_Kiosk.Core.Admin.csproj">
       <Project>{f9c953d0-1511-46e4-af23-fed0bad406a8}</Project>
       <Name>EggDrop_Kiosk.Core.Admin</Name>
@@ -210,6 +213,10 @@
     <ProjectReference Include="..\KQRCode\KQRCode.csproj">
       <Project>{62f1b37e-4bb2-442b-99a7-36279c5c0f3f}</Project>
       <Name>KQRCode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIStateManagerLibrary\UIStateManagerLibrary.csproj">
+      <Project>{6c8ddf0d-6bd6-41de-be05-20777b69a311}</Project>
+      <Name>UIStateManagerLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

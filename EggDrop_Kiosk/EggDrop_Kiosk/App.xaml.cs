@@ -1,4 +1,5 @@
 ﻿using EggDrop_Kiosk.Core.Order;
+using EggDrop_Kiosk.Core.Order.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,8 +17,8 @@ namespace EggDrop_Kiosk
     public partial class App : Application
     {
         public static UIStateManager uIStateManager = new UIStateManager();
-    
-        public static OrderData orderData = new OrderData();
+        public static OrderViewModel orderViewModel = new OrderViewModel();
+
         public DateTime StartTime = DateTime.Now;
 
         // WPF 전역 예외처리, 어플리케이션 강제 종료 방지

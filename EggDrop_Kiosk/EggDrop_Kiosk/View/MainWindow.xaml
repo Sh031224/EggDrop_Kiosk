@@ -12,6 +12,7 @@
         xmlns:control_Table="clr-namespace:EggDrop_Kiosk.Control.Table"
         xmlns:control_Admin="clr-namespace:EggDrop_Kiosk.Control.Admin"
         xmlns:control_Complete="clr-namespace:EggDrop_Kiosk.Control.Complete"
+        xmlns:control_Login="clr-namespace:EggDrop_Kiosk.Control.Login"
         mc:Ignorable="d"
         Title="MainWindow" Width="1920" Height="1080">
     <Grid>
@@ -42,6 +43,7 @@
         </Grid>
         <Grid Grid.Row="1">
             <control_Home:HomeControl x:Name="CtrlHome" Visibility="Visible" />
+            <control_Login:LoginControl x:Name="CtrlLogin" Visibility="Collapsed" />
             <control_Order:OrderControl x:Name="CtrlOrder" Visibility="Collapsed" />
             <control_Pay:PayControl x:Name="CtrlPay" Visibility="Collapsed" />
             <control_Card:CardControl x:Name="CtrlCard" Visibility="Collapsed" />

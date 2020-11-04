@@ -36,7 +36,7 @@ namespace EggDrop_Kiosk
             SetStartCustomControl();
 
           // 데이터 로드
-            App.orderData.orderViewModel.LoadData();
+            App.orderViewModel.LoadData();
 
 
             CtrlHome.BtnAdmin.Click += BtnAdmin_Click;
@@ -60,6 +60,7 @@ namespace EggDrop_Kiosk
             App.uIStateManager.SetCustomCtrl(CtrlCard, CustomControlType.PAYCARD);
             App.uIStateManager.SetCustomCtrl(CtrlCash, CustomControlType.PAYCASH);
             App.uIStateManager.SetCustomCtrl(CtrlAdmin, CustomControlType.ADMIN);
+            App.uIStateManager.SetCustomCtrl(CtrlComplete, CustomControlType.PAYCOMPLETE);
         }
 
         private void SetStartCustomControl()
@@ -93,7 +94,7 @@ namespace EggDrop_Kiosk
 
         private void BtnNext_Click(object sender, RoutedEventArgs e)
         {
-            if (App.orderData.orderViewModel.OrderedProductModels.Count() == 0)
+            if (App.orderViewModel.OrderedProductModels.Count() == 0)
             {
                 MessageBox.Show("상품이 없습니다.");
                 return;
@@ -139,11 +140,11 @@ namespace EggDrop_Kiosk
 
         private void BtnHome_Click(object sender, RoutedEventArgs e)
         {
-            if (App.orderData.orderViewModel.OrderedProductModels.Count > 0)
+            if (App.orderViewModel.OrderedProductModels.Count > 0)
             {
                 if (MessageBox.Show("주문 중인 내용이 모두 사라집니다.", "홈 이동.", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
-                    App.orderData.orderViewModel.OrderedProductModels.Clear();
+                    App.orderViewModel.ClearOrderedProductModels();
                     App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
                 }
             } else

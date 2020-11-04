@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KQRCode", "KQRCode\KQRCode.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EggDrop_Kiosk.Core.Util", "EggDrop_Kiosk.Core.Util\EggDrop_Kiosk.Core.Util.csproj", "{E6977232-28B3-407D-8046-089C24020472}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIStateManagerLibrary", "..\..\..\Downloads\UIStateManagerLibrary-main\UIStateManagerLibrary-main\UIStateManagerLibrary\UIStateManagerLibrary\UIStateManagerLibrary.csproj", "{6C8DDF0D-6BD6-41DE-BE05-20777B69A311}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIStateManagerLibrary", "UIStateManagerLibrary\UIStateManagerLibrary.csproj", "{6C8DDF0D-6BD6-41DE-BE05-20777B69A311}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
