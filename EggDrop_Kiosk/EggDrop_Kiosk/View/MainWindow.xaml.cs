@@ -44,6 +44,9 @@ namespace EggDrop_Kiosk
             CtrlPay.BtnCard.Click += BtnCard_Click;
             CtrlPay.BtnCash.Click += BtnCash_Click;
             CtrlComplete.BtnComplete.Click += BtnComplete_Click;
+            CtrlPlace.BtnPrevious.Click += BtnPlacePrevious_Click;
+            CtrlPlace.BtnPlacePay.Click += BtnPlacePay_Click;
+            CtrlPlace.BtnPlaceTable.Click += BtnPlaceTable_Click;
             CtrlOrder.BtnOrderNext.Click += BtnOrderNext_Click;
             CtrlPay.BtnPrevious.Click += BtnPayPrevious_Click;
             CtrlOrder.BtnPrevious.Click += BtnOrderPrevious_Click;
@@ -55,6 +58,7 @@ namespace EggDrop_Kiosk
             App.uIStateManager.SetCustomCtrl(CtrlHome, CustomControlType.HOME);
             App.uIStateManager.SetCustomCtrl(CtrlOrder, CustomControlType.ORDER);
             App.uIStateManager.SetCustomCtrl(CtrlTable, CustomControlType.TABLE);
+            App.uIStateManager.SetCustomCtrl(CtrlPlace, CustomControlType.PLACE);
             App.uIStateManager.SetCustomCtrl(CtrlPay, CustomControlType.PAY);
             App.uIStateManager.SetCustomCtrl(CtrlCard, CustomControlType.PAYCARD);
             App.uIStateManager.SetCustomCtrl(CtrlCash, CustomControlType.PAYCASH);
@@ -83,9 +87,24 @@ namespace EggDrop_Kiosk
             App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
         }
 
-        private void BtnPayPrevious_Click(object sender, RoutedEventArgs e)
+        private void BtnPlacePrevious_Click(object sender, RoutedEventArgs e)
         {
             App.uIStateManager.SwitchCustomControl(CustomControlType.ORDER);
+        }
+        
+        private void BtnPlacePay_Click(object sender, RoutedEventArgs e)
+        {
+            App.uIStateManager.SwitchCustomControl(CustomControlType.PAY);
+        }
+        
+        private void BtnPlaceTable_Click(object sender, RoutedEventArgs e)
+        {
+            App.uIStateManager.SwitchCustomControl(CustomControlType.TABLE);
+        }
+
+        private void BtnPayPrevious_Click(object sender, RoutedEventArgs e)
+        {
+            App.uIStateManager.SwitchCustomControl(CustomControlType.PLACE);
         }
 
         private void BtnOrderNext_Click(object sender, RoutedEventArgs e)
@@ -96,7 +115,7 @@ namespace EggDrop_Kiosk
                 return;
             }
 
-            App.uIStateManager.SwitchCustomControl(CustomControlType.PAY);
+            App.uIStateManager.SwitchCustomControl(CustomControlType.PLACE);
         }
 
         private void Clock_Loaded(object sender, RoutedEventArgs e)
