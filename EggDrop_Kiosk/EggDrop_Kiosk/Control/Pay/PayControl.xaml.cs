@@ -26,6 +26,7 @@ namespace EggDrop_Kiosk.Control.Pay
             InitializeComponent();
 
             Loaded += PayControl_Loaded; ;
+            tbTotalPrice.DataContext = App.orderViewModel.OrderedTotalPrice;
         }
 
         private void PayControl_Loaded(object sender, RoutedEventArgs e)

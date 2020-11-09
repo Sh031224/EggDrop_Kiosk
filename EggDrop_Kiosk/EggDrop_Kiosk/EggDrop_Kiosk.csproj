@@ -160,6 +160,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Assets\.keep" />
     <None Include="packages.config" />
@@ -201,6 +202,10 @@
     <ProjectReference Include="..\EggDrop_Kiosk.Core.Admin\EggDrop_Kiosk.Core.Admin.csproj">
       <Project>{f9c953d0-1511-46e4-af23-fed0bad406a8}</Project>
       <Name>EggDrop_Kiosk.Core.Admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EggDrop_Kiosk.Core.Complete\EggDrop_Kiosk.Core.Complete.csproj">
+      <Project>{d00f1ad2-6a05-458b-b908-4f472611f2f5}</Project>
+      <Name>EggDrop_Kiosk.Core.Complete</Name>
     </ProjectReference>
     <ProjectReference Include="..\EggDrop_Kiosk.Core.Order\EggDrop_Kiosk.Core.Order.csproj">
       <Project>{F37A2EA7-E301-46BF-988F-64767A43155F}</Project>

@@ -265,7 +265,7 @@
                             </Button>
                             <Button Content="완료"
                                 FontSize="26" FontWeight="bold"
-                                x:Name="BtnNext"
+                                x:Name="BtnOrderNext"
                                 Width="300" Height="60">
                                 <Button.Resources>
                                     <Style TargetType="Button">

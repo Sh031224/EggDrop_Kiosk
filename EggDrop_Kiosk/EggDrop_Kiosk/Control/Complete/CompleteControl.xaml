@@ -15,15 +15,16 @@
                        FontWeight="bold"
                        TextAlignment="Center"
                        Margin="0 30 0 12" />
-            <TextBlock Text="조금만 기다려주세요."
+            <TextBlock Text="주문이 완료되었습니다."
                        FontSize="16"
                        TextAlignment="Center" />
         </StackPanel>
         <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-            <TextBlock Text="총 결제 금액: "
+            <TextBlock Text="{Binding Value, StringFormat={}총 금액: {0}원}"
                        FontSize="24"
-                       FontWeight="Bold" />
+                       FontWeight="Bold"
+                       x:Name="tbTotalPrice"/>
             <TextBlock Text="주문 번호: "
                        FontSize="24"
                        FontWeight="Bold" />
