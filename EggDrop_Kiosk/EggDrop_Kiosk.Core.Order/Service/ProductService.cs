@@ -17,7 +17,7 @@ namespace EggDrop_Kiosk.Core.Order.Service
 
         public ObservableCollection<ProductModel> GetProducts()
         {
-            DbConnecion dbConnection = new DbConnecion();
+            DbConnection dbConnection = new DbConnection();
 
             dbConnection.Connect();
             // 카테고리 인덱스로 정렬해서 받아옴
