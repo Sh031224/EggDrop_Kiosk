@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EggDrop_Kiosk.Core.Complete.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using UIStateManagerLibrary;
 
 namespace EggDrop_Kiosk.Control.Complete
@@ -21,9 +23,17 @@ namespace EggDrop_Kiosk.Control.Complete
     /// </summary>
     public partial class CompleteControl : CustomControlModel
     {
+        private CompleteViewModel completeViewModel = new CompleteViewModel();
+
         public CompleteControl()
         {
             InitializeComponent();
+            Loaded += CompleteControl_Loaded;
+        }
+
+        private void CompleteControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            tbTotalPrice.DataContext = App.orderViewModel.OrderedTotalPrice;
         }
     }
 }

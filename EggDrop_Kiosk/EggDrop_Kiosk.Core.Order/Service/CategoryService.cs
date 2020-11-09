@@ -14,7 +14,7 @@ namespace EggDrop_Kiosk.Core.Order.Service
     {
         public ObservableCollection<CategoryModel> GetCategories()
         {
-            DbConnecion dbConnection = new DbConnecion();
+            DbConnection dbConnection = new DbConnection();
 
             dbConnection.Connect();
             dbConnection.SetCommand("SELECT idx, name FROM category;");

@@ -16,7 +16,8 @@
                       Source="Assets/Home/home-video.mp4"
                       LoadedBehavior="Play"
                       UnloadedBehavior="Manual"
-                      MediaEnded="EggDropVideoEnded"/>
+                      MediaEnded="EggDropVideoEnded"
+                      Volume="0"/>
         <StackPanel Grid.Row="1">
             <TextBlock Text="EGG DROP을 방문해주셔서 감사합니다."
                    Height="70"

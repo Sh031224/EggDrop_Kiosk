@@ -44,13 +44,12 @@ namespace EggDrop_Kiosk
             CtrlPay.BtnCard.Click += BtnCard_Click;
             CtrlPay.BtnCash.Click += BtnCash_Click;
             CtrlComplete.BtnComplete.Click += BtnComplete_Click;
-            CtrlOrder.BtnNext.Click += BtnNext_Click;
-            CtrlPay.BtnPrevious.Click += BtnPrevious_Click;
-            CtrlOrder.BtnPrevious.Click += BtnPrevious_Click1;
-            CtrlCard.BtnPrevious.Click += BtnPrevious_Click2;
-            CtrlCash.BtnPrevious.Click += BtnPrevious_Click3;
+            CtrlOrder.BtnOrderNext.Click += BtnOrderNext_Click;
+            CtrlPay.BtnPrevious.Click += BtnPayPrevious_Click;
+            CtrlOrder.BtnPrevious.Click += BtnOrderPrevious_Click;
+            CtrlCard.BtnPrevious.Click += BtnCardPrevious_Click;
+            CtrlCash.BtnPrevious.Click += BtnCashPrevious_Click;
         }
-
         private void SetCustomControls()
         {
             App.uIStateManager.SetCustomCtrl(CtrlHome, CustomControlType.HOME);
@@ -59,6 +58,7 @@ namespace EggDrop_Kiosk
             App.uIStateManager.SetCustomCtrl(CtrlPay, CustomControlType.PAY);
             App.uIStateManager.SetCustomCtrl(CtrlCard, CustomControlType.PAYCARD);
             App.uIStateManager.SetCustomCtrl(CtrlCash, CustomControlType.PAYCASH);
+            App.uIStateManager.SetCustomCtrl(CtrlComplete, CustomControlType.PAYCOMPLETE);
             App.uIStateManager.SetCustomCtrl(CtrlAdmin, CustomControlType.ADMIN);
             App.uIStateManager.SetCustomCtrl(CtrlComplete, CustomControlType.PAYCOMPLETE);
         }
@@ -68,31 +68,27 @@ namespace EggDrop_Kiosk
             App.uIStateManager.PushCustomCtrl(CtrlHome);
         }
 
-        private void BtnPrevious_Click3(object sender, RoutedEventArgs e)
+        private void BtnCashPrevious_Click(object sender, RoutedEventArgs e)
         {
-            CtrlCash.Visibility = Visibility.Collapsed;
-            CtrlPay.Visibility = Visibility.Visible;
+            App.uIStateManager.SwitchCustomControl(CustomControlType.PAY);
         }
 
-        private void BtnPrevious_Click2(object sender, RoutedEventArgs e)
+        private void BtnCardPrevious_Click(object sender, RoutedEventArgs e)
         {
-            CtrlCard.Visibility = Visibility.Collapsed;
-            CtrlPay.Visibility = Visibility.Visible;
+            App.uIStateManager.SwitchCustomControl(CustomControlType.PAY);
         }
 
-        private void BtnPrevious_Click1(object sender, RoutedEventArgs e)
+        private void BtnOrderPrevious_Click(object sender, RoutedEventArgs e)
         {
-            CtrlOrder.Visibility = Visibility.Collapsed;
-            CtrlHome.Visibility = Visibility.Visible;
+            App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
         }
 
-        private void BtnPrevious_Click(object sender, RoutedEventArgs e)
+        private void BtnPayPrevious_Click(object sender, RoutedEventArgs e)
         {
-            CtrlPay.Visibility = Visibility.Collapsed;
-            CtrlOrder.Visibility = Visibility.Visible;
+            App.uIStateManager.SwitchCustomControl(CustomControlType.ORDER);
         }
 
-        private void BtnNext_Click(object sender, RoutedEventArgs e)
+        private void BtnOrderNext_Click(object sender, RoutedEventArgs e)
         {
             if (App.orderViewModel.OrderedProductModels.Count() == 0)
             {
@@ -100,8 +96,7 @@ namespace EggDrop_Kiosk
                 return;
             }
 
-            CtrlOrder.Visibility = Visibility.Collapsed;
-            CtrlPay.Visibility = Visibility.Visible;
+            App.uIStateManager.SwitchCustomControl(CustomControlType.PAY);
         }
 
         private void Clock_Loaded(object sender, RoutedEventArgs e)
@@ -155,8 +150,7 @@ namespace EggDrop_Kiosk
         }
         private void BtnComplete_Click(object sender, RoutedEventArgs e)
         {
-            CtrlComplete.Visibility = Visibility.Collapsed;
-            CtrlHome.Visibility = Visibility.Visible;
+            App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
         }
 
     }

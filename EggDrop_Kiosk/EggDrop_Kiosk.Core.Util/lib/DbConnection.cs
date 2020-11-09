@@ -1,15 +1,9 @@
-﻿using EggDrop_Kiosk.Config;
-using EggDrop_Kiosk.Core.Util;
+﻿using EggDrop_Kiosk.Core.Util.Config;
 using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EggDrop_Kiosk.Core.Util
 {
-    public class DbConnecion
+    public class DbConnection
     {
         private MySqlConnection connection = null;
         private MySqlCommand command = null;
