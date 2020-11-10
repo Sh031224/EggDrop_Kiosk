@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:EggDrop_Kiosk"
         xmlns:control_Home="clr-namespace:EggDrop_Kiosk.Control.Home"
         xmlns:control_Order="clr-namespace:EggDrop_Kiosk.Control.Order"
+        xmlns:control_Place="clr-namespace:EggDrop_Kiosk.Control.Place"
         xmlns:control_Pay="clr-namespace:EggDrop_Kiosk.Control.Pay"
         xmlns:control_Card="clr-namespace:EggDrop_Kiosk.Control.Card"
         xmlns:control_Cash="clr-namespace:EggDrop_Kiosk.Control.Cash"
@@ -14,43 +15,56 @@
         xmlns:control_Complete="clr-namespace:EggDrop_Kiosk.Control.Complete"
         xmlns:control_Login="clr-namespace:EggDrop_Kiosk.Control.Login"
         mc:Ignorable="d"
-        Title="MainWindow" Width="1920" Height="1080">
+        Title="MainWindow"
+        Width="1920"
+        Height="1080">
     <Grid>
         <!--작업하는 컨트롤에서 Visibility Collapsed 에서 Visible 로 바꾸고 이거는 커밋하지마-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="9*" />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="#F5F5F5">
+        <Grid Grid.Row="0"
+              Background="#F5F5F5">
             <TextBlock Name="Clock"
-                   FontSize="36"
-                   FontWeight="bold"
-                   VerticalAlignment="Center"
-                   Padding="50 20 0 20"
-                   Foreground="#000000"
-                   Loaded="Clock_Loaded"/>
+                       FontSize="36"
+                       FontWeight="bold"
+                       VerticalAlignment="Center"
+                       Padding="50 20 0 20"
+                       Foreground="#000000"
+                       Loaded="Clock_Loaded" />
 
             <Button x:Name="BtnHome"
                     Click="BtnHome_Click"
                     Width="90px"
-                    HorizontalAlignment="Right"
-                    >
+                    HorizontalAlignment="Right">
                 <Image Source="/Assets/Home/Home.png"
                        Width="90px"
                        x:Name="ImgHome" />
             </Button>
-           
+
         </Grid>
         <Grid Grid.Row="1">
-            <control_Home:HomeControl x:Name="CtrlHome" Visibility="Visible" />
-            <control_Login:LoginControl x:Name="CtrlLogin" Visibility="Collapsed" />
-            <control_Order:OrderControl x:Name="CtrlOrder" Visibility="Collapsed" />
-            <control_Pay:PayControl x:Name="CtrlPay" Visibility="Collapsed" />
-            <control_Card:CardControl x:Name="CtrlCard" Visibility="Collapsed" />
-            <control_Cash:CashControl x:Name="CtrlCash" Visibility="Collapsed" />
-            <control_Table:TableControl x:Name="CtrlTable" Visibility="Collapsed" />
-            <control_Admin:AdminControl x:Name="CtrlAdmin" Visibility="Collapsed" />
-            <control_Complete:CompleteControl x:Name="CtrlComplete" Visibility="Collapsed" />
+            <control_Home:HomeControl x:Name="CtrlHome"
+                                      Visibility="Visible" />
+            <control_Login:LoginControl x:Name="CtrlLogin"
+                                        Visibility="Collapsed" />
+            <control_Order:OrderControl x:Name="CtrlOrder"
+                                        Visibility="Collapsed" />
+            <control_Place:PlaceControl x:Name="CtrlPlace"
+                                        Visibility="Collapsed" />
+            <control_Pay:PayControl x:Name="CtrlPay"
+                                    Visibility="Collapsed" />
+            <control_Card:CardControl x:Name="CtrlCard"
+                                      Visibility="Collapsed" />
+            <control_Cash:CashControl x:Name="CtrlCash"
+                                      Visibility="Collapsed" />
+            <control_Table:TableControl x:Name="CtrlTable"
+                                        Visibility="Collapsed" />
+            <control_Admin:AdminControl x:Name="CtrlAdmin"
+                                        Visibility="Collapsed" />
+            <control_Complete:CompleteControl x:Name="CtrlComplete"
+                                              Visibility="Collapsed" />
         </Grid>
     </Grid>
 </Window>

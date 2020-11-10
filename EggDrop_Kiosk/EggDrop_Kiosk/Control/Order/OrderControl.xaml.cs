@@ -113,5 +113,13 @@ namespace EggDrop_Kiosk.Control.Order
                 App.orderViewModel.RemoveOrderedProductModels((ProductModel)dgOrderedProducts.SelectedItem);
             }
         }
+
+        private void BtnClearOrderedProduct_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("정말로 모두 삭제하시겠습니까?", "경고", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                App.orderViewModel.ClearOrderedProductModels();
+            }
+        }
     }
 }

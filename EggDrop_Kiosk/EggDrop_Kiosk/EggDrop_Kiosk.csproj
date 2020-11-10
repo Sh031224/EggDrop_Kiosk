@@ -99,6 +99,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Control\Place\PlaceControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Control\Table\TableControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,6 +138,9 @@
     </Compile>
     <Compile Include="Control\Pay\PayControl.xaml.cs">
       <DependentUpon>PayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Place\PlaceControl.xaml.cs">
+      <DependentUpon>PlaceControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\Table\TableControl.xaml.cs">
       <DependentUpon>TableControl.xaml</DependentUpon>
