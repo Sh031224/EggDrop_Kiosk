@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EggDrop_Kiosk.Core.Admin
+namespace EggDrop_Kiosk.Common
 {
-    public class Class1
+    class SettingPreference
     {
+        //private 
     }
 }

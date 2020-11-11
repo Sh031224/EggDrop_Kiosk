@@ -7,6 +7,7 @@
     public enum CustomControlType
     {
         // TODO : 아래의 Enum은 재구성하여 사용할 것.
+        LOGIN,
         ADMIN,
         HOME,
         ORDER,

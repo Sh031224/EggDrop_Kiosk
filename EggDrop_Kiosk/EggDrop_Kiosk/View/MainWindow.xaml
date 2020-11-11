@@ -46,9 +46,7 @@
         </Grid>
         <Grid Grid.Row="1">
             <control_Home:HomeControl x:Name="CtrlHome"
-                                      Visibility="Visible" />
-            <control_Login:LoginControl x:Name="CtrlLogin"
-                                        Visibility="Collapsed" />
+                                      Visibility="Collapsed" />
             <control_Order:OrderControl x:Name="CtrlOrder"
                                         Visibility="Collapsed" />
             <control_Place:PlaceControl x:Name="CtrlPlace"
@@ -66,5 +64,9 @@
             <control_Complete:CompleteControl x:Name="CtrlComplete"
                                               Visibility="Collapsed" />
         </Grid>
+
+        <control_Login:LoginControl x:Name="CtrlLogin"
+                                    Visibility="Visible" 
+                                    Grid.RowSpan="2"/>
     </Grid>
 </Window>

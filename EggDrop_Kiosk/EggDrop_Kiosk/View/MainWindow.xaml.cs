@@ -37,6 +37,7 @@ namespace EggDrop_Kiosk
 
           // 데이터 로드
             App.orderViewModel.LoadData();
+            App.adminViewModel.GetOrderInfo();
 
 
             CtrlHome.BtnAdmin.Click += BtnAdmin_Click;
@@ -53,8 +54,10 @@ namespace EggDrop_Kiosk
             CtrlCard.BtnPrevious.Click += BtnCardPrevious_Click;
             CtrlCash.BtnPrevious.Click += BtnCashPrevious_Click;
         }
+
         private void SetCustomControls()
         {
+            App.uIStateManager.SetCustomCtrl(CtrlLogin, CustomControlType.LOGIN);
             App.uIStateManager.SetCustomCtrl(CtrlHome, CustomControlType.HOME);
             App.uIStateManager.SetCustomCtrl(CtrlOrder, CustomControlType.ORDER);
             App.uIStateManager.SetCustomCtrl(CtrlTable, CustomControlType.TABLE);
@@ -69,7 +72,7 @@ namespace EggDrop_Kiosk
 
         private void SetStartCustomControl()
         {
-            App.uIStateManager.PushCustomCtrl(CtrlHome);
+            App.uIStateManager.PushCustomCtrl(CtrlLogin);
         }
 
         private void BtnCashPrevious_Click(object sender, RoutedEventArgs e)

@@ -1,5 +1,7 @@
-﻿using EggDrop_Kiosk.Core.Order;
+﻿using EggDrop_Kiosk.Core.Admin.ViewModel;
+using EggDrop_Kiosk.Core.Order;
 using EggDrop_Kiosk.Core.Order.ViewModel;
+using EggDrop_Kiost.Core.Login.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,15 +20,17 @@ namespace EggDrop_Kiosk
     {
         public static UIStateManager uIStateManager = new UIStateManager();
         public static OrderViewModel orderViewModel = new OrderViewModel();
+        public static LoginViewModel loginViewModel = new LoginViewModel();
+        public static AdminViewModel adminViewModel = new AdminViewModel();
 
         public DateTime StartTime = DateTime.Now;
 
         // WPF 전역 예외처리, 어플리케이션 강제 종료 방지
-        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
-        {
-            MessageBox.Show("An unhandled exception just occured: " + e.Exception, "예외 발생", MessageBoxButton.OK, MessageBoxImage.Error);
-            e.Handled = true;
-        }
+        //private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        //{
+        //    MessageBox.Show("An unhandled exception just occured: " + e.Exception, "예외 발생", MessageBoxButton.OK, MessageBoxImage.Error);
+        //    e.Handled = true;
+        //}
 
         private void Application_Exit(object sender, ExitEventArgs e)
         {

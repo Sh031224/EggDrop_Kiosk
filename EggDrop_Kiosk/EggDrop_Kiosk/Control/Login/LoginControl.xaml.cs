@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EggDrop_Kiosk.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,39 @@ namespace EggDrop_Kiosk.Control.Login
         public LoginControl()
         {
             InitializeComponent();
+            Loaded += LoginControl_Loaded;
+        }
+
+        private void LoginControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (Settings.Default.autoLogin)
+            {
+                LoginSuccess();
+            }
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            if (tbUserId.Text != "" && tbUserPw.Password != "")
+            {
+                Boolean success = App.loginViewModel.TryLogin(tbUserId.Text, tbUserPw.Password);
+
+                Settings.Default.autoLogin = (bool)cbAutoLogin.IsChecked;
+                Settings.Default.Save();
+
+                if (success)
+                {
+                    LoginSuccess();
+                } else
+                {
+                    MessageBox.Show("로그인에 실패하였습니다.");
+                }
+            }
+        }
+
+        private void LoginSuccess()
+        {
+            App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
         }
     }
 }
