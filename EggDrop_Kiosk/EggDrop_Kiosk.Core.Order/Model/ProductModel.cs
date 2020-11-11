@@ -53,7 +53,7 @@ namespace EggDrop_Kiosk.Core.Order.Model
             set
             {
                 SetProperty(ref _salePercent, value);
-                SalePrice = (Price - SalePercent / 100 * Price);
+                SalePrice = Price - (_salePercent * Price / 100);   
             }
         }
 
