@@ -4,6 +4,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace EggDrop_Kiosk.Core.Order.Service
 
             dbConnection.Connect();
             // 카테고리 인덱스로 정렬해서 받아옴
-            dbConnection.SetCommand("SELECT idx, name, category_idx, price, sale_percent, image_path FROM product ORDER BY category_idx;");
+            dbConnection.SetCommand("SELECT * FROM product ORDER BY category_idx;");
 
             MySqlDataReader reader = dbConnection.ExecuteQuery();
 
@@ -51,6 +52,7 @@ namespace EggDrop_Kiosk.Core.Order.Service
                     SalePercent = Convert.ToInt32(reader["sale_percent"]),
                     ImagePath = Convert.ToString(reader["image_path"]),
                     Count = 1,
+                    IsSoldOut = Convert.ToBoolean(reader["is_sold_out"]),
                     Page = page
                 };
 

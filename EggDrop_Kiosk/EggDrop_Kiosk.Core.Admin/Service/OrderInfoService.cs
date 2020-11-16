@@ -77,6 +77,7 @@ namespace EggDrop_Kiosk.Core.Admin.Service
                     SalePercent = salePercent,
                     ImagePath = Convert.ToString(reader["image_path"]),
                     Count = count,
+                    IsSoldOut = Convert.ToBoolean(reader["is_sold_out"]),
                     Page = 0
                 };
             }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EggDrop_Kiosk.Core.TcpClient.Model;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -39,6 +41,7 @@ namespace EggDrop_Kiosk
             App.orderViewModel.LoadData();
             App.adminViewModel.GetOrderInfo();
 
+            LoginConnect();
 
             CtrlHome.BtnAdmin.Click += BtnAdmin_Click;
             CtrlHome.BtnOrder.Click += BtnOrder_Click;
@@ -48,11 +51,23 @@ namespace EggDrop_Kiosk
             CtrlPlace.BtnPrevious.Click += BtnPlacePrevious_Click;
             CtrlPlace.BtnPlacePay.Click += BtnPlacePay_Click;
             CtrlPlace.BtnPlaceTable.Click += BtnPlaceTable_Click;
-            CtrlOrder.BtnOrderNext.Click += BtnOrderNext_Click;
             CtrlPay.BtnPrevious.Click += BtnPayPrevious_Click;
             CtrlOrder.BtnPrevious.Click += BtnOrderPrevious_Click;
             CtrlCard.BtnPrevious.Click += BtnCardPrevious_Click;
             CtrlCash.BtnPrevious.Click += BtnCashPrevious_Click;
+        }
+
+        private void LoginConnect()
+        {
+            RequestModel requestModel = new RequestModel();
+            requestModel.MSGType = 0;
+            requestModel.ShopName = "";
+            requestModel.Menus = null;
+            requestModel.Content = "";
+            requestModel.OrderNumber = "";
+
+            App.tcpClientViewModel.StartConnection();
+            App.tcpClientViewModel.Send(requestModel);
         }
 
         private void SetCustomControls()
@@ -107,17 +122,6 @@ namespace EggDrop_Kiosk
 
         private void BtnPayPrevious_Click(object sender, RoutedEventArgs e)
         {
-            App.uIStateManager.SwitchCustomControl(CustomControlType.PLACE);
-        }
-
-        private void BtnOrderNext_Click(object sender, RoutedEventArgs e)
-        {
-            if (App.orderViewModel.OrderedProductModels.Count() == 0)
-            {
-                MessageBox.Show("상품이 없습니다.");
-                return;
-            }
-
             App.uIStateManager.SwitchCustomControl(CustomControlType.PLACE);
         }
 

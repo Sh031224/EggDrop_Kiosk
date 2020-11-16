@@ -53,7 +53,7 @@ namespace EggDrop_Kiosk.Core.Order.Model
             set
             {
                 SetProperty(ref _salePercent, value);
-                SalePrice = Price - (_salePercent * Price / 100);   
+                SalePrice = Price - (_salePercent * Price / 100);
             }
         }
 
@@ -73,6 +73,13 @@ namespace EggDrop_Kiosk.Core.Order.Model
                 SetProperty(ref _count, value);
                 TotalPrice = SalePrice * Count;
             }
+        }
+
+        private bool _isSoldOut;
+        public bool IsSoldOut
+        {
+            get => _isSoldOut;
+            set => SetProperty(ref _isSoldOut, value);
         }
 
         private int _totalPrice;

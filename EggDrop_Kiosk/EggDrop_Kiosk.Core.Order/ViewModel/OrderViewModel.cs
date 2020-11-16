@@ -71,7 +71,7 @@ namespace EggDrop_Kiosk.Core.Order.ViewModel
         public void AddOrderedProductModels(ProductModel productModel)
         {
             // 이미 있는 상품 클릭시 추가하지 않음
-            if (OrderedProductModels.Where(x => x.Name == productModel.Name).Count() > 0)
+            if (OrderedProductModels.Where(x => x.Name == productModel.Name).Count() > 0 || productModel.IsSoldOut)
             {
                 return;
             }
