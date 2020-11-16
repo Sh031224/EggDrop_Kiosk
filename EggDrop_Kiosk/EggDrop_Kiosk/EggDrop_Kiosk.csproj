@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Prism, Version=7.2.0.1422, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Core.7.2.0.1422\lib\net45\Prism.dll</HintPath>
     </Reference>
@@ -218,6 +221,10 @@
     <ProjectReference Include="..\EggDrop_Kiosk.Core.Order\EggDrop_Kiosk.Core.Order.csproj">
       <Project>{F37A2EA7-E301-46BF-988F-64767A43155F}</Project>
       <Name>EggDrop_Kiosk.Core.Order</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EggDrop_Kiosk.Core.TcpClient\EggDrop_Kiosk.Core.TcpClient.csproj">
+      <Project>{c08c34b9-6c75-412b-9190-a61715e8be72}</Project>
+      <Name>EggDrop_Kiosk.Core.TcpClient</Name>
     </ProjectReference>
     <ProjectReference Include="..\EggDrop_Kiosk.Core.Util\EggDrop_Kiosk.Core.Util.csproj">
       <Project>{E6977232-28B3-407D-8046-089C24020472}</Project>

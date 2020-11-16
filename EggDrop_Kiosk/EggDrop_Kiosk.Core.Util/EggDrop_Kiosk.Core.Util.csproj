@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\DbConfig.cs" />
+    <Compile Include="Config\TcpClientConfig.cs" />
     <Compile Include="lib\DbConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

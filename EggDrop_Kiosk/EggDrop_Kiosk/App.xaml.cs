@@ -1,6 +1,7 @@
 ﻿using EggDrop_Kiosk.Core.Admin.ViewModel;
 using EggDrop_Kiosk.Core.Order;
 using EggDrop_Kiosk.Core.Order.ViewModel;
+using EggDrop_Kiosk.Core.TcpClient.ViewModel;
 using EggDrop_Kiost.Core.Login.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace EggDrop_Kiosk
         public static OrderViewModel orderViewModel = new OrderViewModel();
         public static LoginViewModel loginViewModel = new LoginViewModel();
         public static AdminViewModel adminViewModel = new AdminViewModel();
+
+        public static TcpClientViewModel tcpClientViewModel = new TcpClientViewModel();
 
         public DateTime StartTime = DateTime.Now;
 
