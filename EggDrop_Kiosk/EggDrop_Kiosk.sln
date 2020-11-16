@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EggDrop_Kiosk.Core.Complete
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EggDrop_Kiost.Core.Login", "EggDrop_Kiost.Core.Login\EggDrop_Kiost.Core.Login.csproj", "{B0B9616F-F666-4698-BC61-9ABE705B344D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EggDrop_Kiosk.Core.TcpClient", "EggDrop_Kiosk.Core.TcpClient\EggDrop_Kiosk.Core.TcpClient.csproj", "{C08C34B9-6C75-412B-9190-A61715E8BE72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{B0B9616F-F666-4698-BC61-9ABE705B344D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0B9616F-F666-4698-BC61-9ABE705B344D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0B9616F-F666-4698-BC61-9ABE705B344D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C08C34B9-6C75-412B-9190-A61715E8BE72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08C34B9-6C75-412B-9190-A61715E8BE72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08C34B9-6C75-412B-9190-A61715E8BE72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08C34B9-6C75-412B-9190-A61715E8BE72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

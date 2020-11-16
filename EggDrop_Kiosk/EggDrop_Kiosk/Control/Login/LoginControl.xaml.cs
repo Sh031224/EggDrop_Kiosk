@@ -1,4 +1,8 @@
-﻿using EggDrop_Kiosk.Properties;
+﻿using EggDrop_Kiosk.Core.Order.Model;
+using EggDrop_Kiosk.Core.TcpClient.Model;
+using EggDrop_Kiosk.Properties;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
