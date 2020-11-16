@@ -131,12 +131,13 @@
                                 <DataTemplate>
                                     <Grid>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="250" />
-                                            <RowDefinition Height="80" />
+                                            <RowDefinition Height="200" />
+                                            <RowDefinition Height="100" />
                                         </Grid.RowDefinitions>
 
                                         <Grid Grid.Row="0">
-                                            <Image Width="250"
+                                            <Image Width="200"
+                                                   HorizontalAlignment="Center"
                                                    Source="{Binding ImagePath}" />
                                         </Grid>
 
@@ -145,9 +146,37 @@
                                                 <TextBlock Text="{Binding Name}"
                                                            HorizontalAlignment="Center"
                                                            FontSize="20" />
-                                                <TextBlock Text="{Binding SalePrice}"
-                                                           HorizontalAlignment="Center"
-                                                           FontSize="16" />
+                                                <TextBlock>
+                                                    <TextBlock.Style>
+                                                        <Style TargetType="TextBlock">
+                                                            <Setter Property="Text"
+                                                                    Value="{Binding FalseText}" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding ShowTrueText}"
+                                                                             Value="True">
+                                                                    <Setter Property="Text"
+                                                                            Value="{Binding TrueText}" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </TextBlock.Style>
+                                                </TextBlock>
+                                                <TextBlock HorizontalAlignment="Center"
+                                                           FontSize="16">
+                                                    <TextBlock.Style>
+                                                        <Style TargetType="TextBlock">
+                                                            <Setter Property="Text"
+                                                                    Value="{Binding SalePrice}" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding IsSoldOut}"
+                                                                             Value="True">
+                                                                    <Setter Property="Text"
+                                                                            Value="품절" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </TextBlock.Style>
+                                                </TextBlock>
                                                 <TextBlock HorizontalAlignment="Center"
                                                            Text="{Binding SalePercent, StringFormat={}{0}% 할인}" />
                                             </StackPanel>
@@ -277,6 +306,7 @@
                                 </Button.Resources>
                             </Button>
                             <Button Content="완료"
+                                    Click="BtnOrderNext_Click"
                                     FontSize="26"
                                     FontWeight="bold"
                                     x:Name="BtnOrderNext"

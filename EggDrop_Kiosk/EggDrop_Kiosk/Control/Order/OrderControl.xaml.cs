@@ -121,5 +121,17 @@ namespace EggDrop_Kiosk.Control.Order
                 App.orderViewModel.ClearOrderedProductModels();
             }
         }
+
+        private void BtnOrderNext_Click(object sender, RoutedEventArgs e)
+        {
+            if (App.orderViewModel.OrderedProductModels.Count() == 0)
+            {
+                MessageBox.Show("상품이 없습니다.");
+                return;
+            }
+
+            lbMenus.SelectedItem = null;
+            App.uIStateManager.SwitchCustomControl(CustomControlType.PLACE);
+        }
     }
 }
