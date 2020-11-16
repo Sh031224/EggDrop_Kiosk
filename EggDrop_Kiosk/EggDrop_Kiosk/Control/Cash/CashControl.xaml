@@ -20,7 +20,7 @@
                        TextAlignment="Center"/>
                 <TextBlock Text="현금 영수증 카드를 제시해주세요." TextAlignment="Center"
                        FontSize="28" FontWeight="Regular" Margin="0 0 0 30"/>
-                <TextBlock Text="{Binding Value, StringFormat={}총 금액: {0}원}" TextAlignment="Center"
+                <TextBlock Text="{Binding OrderedTotalPrice, StringFormat={}총 금액: {0}원}" TextAlignment="Center"
                        FontSize="28" FontWeight="Bold" Margin="0 0 0 30"
                        x:Name="tbTotalPrice"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

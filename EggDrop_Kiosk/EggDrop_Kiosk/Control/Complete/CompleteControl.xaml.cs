@@ -1,4 +1,5 @@
 ﻿using EggDrop_Kiosk.Core.Complete.ViewModel;
+using EggDrop_Kiosk.Core.Table.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,6 @@ namespace EggDrop_Kiosk.Control.Complete
     /// </summary>
     public partial class CompleteControl : CustomControlModel
     {
-        private CompleteViewModel completeViewModel = new CompleteViewModel();
 
         public CompleteControl()
         {
@@ -33,7 +33,7 @@ namespace EggDrop_Kiosk.Control.Complete
 
         private void CompleteControl_Loaded(object sender, RoutedEventArgs e)
         {
-            tbTotalPrice.DataContext = App.orderViewModel.OrderedTotalPrice;
+            tbTotalPrice.DataContext = App.orderViewModel;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace EggDrop_Kiosk.Core.Complete.ViewModel
 
         public void InsertData()
         {
-            receiptService.PostReceipt();
+            //receiptService.PostReceipt();
         }
     }
 }

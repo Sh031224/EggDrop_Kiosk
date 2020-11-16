@@ -149,6 +149,8 @@
     <Compile Include="Control\Table\TableControl.xaml.cs">
       <DependentUpon>TableControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converter\UsingTableConverter.cs" />
+    <Compile Include="Converter\VisibilityConverter.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

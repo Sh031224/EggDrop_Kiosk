@@ -1,22 +1,11 @@
 ﻿using EggDrop_Kiosk.Core.Complete.ViewModel;
+using EggDrop_Kiosk.Core.Table.ViewModel;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using UIStateManagerLibrary;
-using ZXing;
 
 namespace EggDrop_Kiosk.Control.Card
 {
@@ -25,6 +14,7 @@ namespace EggDrop_Kiosk.Control.Card
     /// </summary>
     public partial class CardControl : CustomControlModel
     {
+        private TableViewModel tableViewModel = TableViewModel.Instance;
         private CompleteViewModel completeViewModel = new CompleteViewModel();
         DispatcherTimer timer = new DispatcherTimer();
 
@@ -37,7 +27,7 @@ namespace EggDrop_Kiosk.Control.Card
 
         private void CardControl_Loaded(object sender, RoutedEventArgs e)
         {
-            tbTotalPrice.DataContext = App.orderViewModel.OrderedTotalPrice;
+            tbTotalPrice.DataContext = App.orderViewModel;
         }
 
         private void webcam_QrDecoded(object sender, string e)
@@ -49,6 +39,8 @@ namespace EggDrop_Kiosk.Control.Card
         {
             if (Equals(tbRecog.Text, "정재덕"))
             {
+                tableViewModel.SelectedTable.PaidTime = DateTime.Now;
+                tableViewModel.InitInstance();
                 App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCOMPLETE);
                 completeViewModel.InsertData();
                 timer.Interval = TimeSpan.FromSeconds(5);
@@ -60,6 +52,8 @@ namespace EggDrop_Kiosk.Control.Card
         private void Timer_Tick(object sender, EventArgs e)
         {
             timer.Stop();
+            tbRecog.Text = "";
+            App.orderViewModel.ClearOrderedProductModels();
             App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
         }
     }
