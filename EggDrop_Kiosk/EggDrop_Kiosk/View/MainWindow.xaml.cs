@@ -44,7 +44,6 @@ namespace EggDrop_Kiosk
             CtrlHome.BtnOrder.Click += BtnOrder_Click;
             CtrlPay.BtnCard.Click += BtnCard_Click;
             CtrlPay.BtnCash.Click += BtnCash_Click;
-            CtrlComplete.BtnComplete.Click += BtnComplete_Click;
             CtrlPlace.BtnPrevious.Click += BtnPlacePrevious_Click;
             CtrlPlace.BtnPlacePay.Click += BtnPlacePay_Click;
             CtrlPlace.BtnPlaceTable.Click += BtnPlaceTable_Click;
@@ -169,10 +168,6 @@ namespace EggDrop_Kiosk
                 App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
             }
             
-        }
-        private void BtnComplete_Click(object sender, RoutedEventArgs e)
-        {
-            App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
         }
 
     }
