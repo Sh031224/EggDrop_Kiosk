@@ -36,7 +36,8 @@ namespace EggDrop_Kiosk.Core.Admin.Service
                 OrderInfoModel orderInfoModel = new OrderInfoModel()
                 {
                     OrderIdx = Convert.ToInt32(reader["order_idx"]),
-                    UserId = Convert.ToInt32(reader["user_id"]),
+                    UserId = Convert.ToString(reader["user_id"]),
+                    UserName = Convert.ToString(reader["user_name"]),
                     Product = GetProductModel(idx, price, salePercent, count),
                     CreatedAt = Convert.ToDateTime(reader["created_at"].ToString()),
                     IsCard = reader["card_number"].ToString() != "",

@@ -1,4 +1,5 @@
 ﻿using EggDrop_Kiosk.Core.Complete.ViewModel;
+using EggDrop_Kiosk.Core.TcpClient.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -40,6 +41,7 @@ namespace EggDrop_Kiosk.Control.Cash
             if (Equals(barcodeValue.Text, "02345673"))
             {
                 App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCOMPLETE);
+                SendOrderInfo();
                 completeViewModel.InsertData();
                 timer.Interval = TimeSpan.FromSeconds(5);
                 timer.Tick += Timer_Tick; ;
@@ -61,6 +63,20 @@ namespace EggDrop_Kiosk.Control.Cash
         private void CashControl_Loaded(object sender, RoutedEventArgs e)
         {
             tbTotalPrice.DataContext = App.orderViewModel.OrderedTotalPrice;
+        }
+
+        private void SendOrderInfo()
+        {
+            RequestModel requestModel = new RequestModel();
+            requestModel.MSGType = 0;
+            requestModel.ShopName = "";
+            //for (int i = 0; i )
+            requestModel.Menus = null;
+            requestModel.Content = "";
+            requestModel.OrderNumber = "";
+
+            App.tcpClientViewModel.StartConnection();
+            App.tcpClientViewModel.Send(requestModel);
         }
     }
 }

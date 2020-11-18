@@ -17,11 +17,18 @@ namespace EggDrop_Kiosk.Core.Admin.Model
             set => SetProperty(ref _orderIdx, value);
         }
 
-        private int _userId;
-        public int UserId
+        private String _userId;
+        public String UserId
         {
             get => _userId;
             set => SetProperty(ref _userId, value);
+        }
+
+        private String _userName;
+        public String UserName
+        {
+            get => _userName;
+            set => SetProperty(ref _userName, value);
         }
 
         private ProductModel _product;

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EggDrop_Kiosk.Core.TcpClient.Service
 {
-    public class TcpClientService
+    public class TcpClientService: SocketAsyncEventArgs
     {
         private TcpClientConfig tcpClientConfig = new TcpClientConfig();
 
@@ -56,6 +56,7 @@ namespace EggDrop_Kiosk.Core.TcpClient.Service
                     client.RemoteEndPoint.ToString());
 
                 connectDone.Set();
+
             }
             catch (Exception e)
             {
@@ -122,25 +123,7 @@ namespace EggDrop_Kiosk.Core.TcpClient.Service
         {
             byte[] byteData = Encoding.UTF8.GetBytes(data);
 
-            client.BeginSend(byteData, 0, byteData.Length, 0,
-                new AsyncCallback(SendCallback), client);
-        }
-
-        public void SendCallback(IAsyncResult ar)
-        {
-            try
-            {
-                Socket client = (Socket)ar.AsyncState;
-
-                int bytesSent = client.EndSend(ar);
-                Console.WriteLine("Sent {0} bytes to server.", bytesSent);
-
-                sendDone.Set();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
+            client.Send(byteData, byteData.Length, SocketFlags.None);
         }
 
     }

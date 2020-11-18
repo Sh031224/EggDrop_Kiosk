@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EggDrop_Kiosk.Common;
+using EggDrop_Kiosk.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +26,24 @@ namespace EggDrop_Kiosk.Control.Admin
         public AdminControl()
         {
             InitializeComponent();
+            Loaded += AdminControl_Loaded;
+        }
+
+        private void AdminControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            tbClock.Text = App.adminViewModel.UsageTime.ToString();
+            cbAutoLogin.DataContext = App.settingPreference;
+        }
+
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            App.settingPreference.AutoLogin = false;
+            App.uIStateManager.SwitchCustomControl(CustomControlType.LOGIN);
+        }
+
+        private void cbAutoLogin_Click(object sender, RoutedEventArgs e)
+        {
+            App.settingPreference.AutoLogin = (bool)cbAutoLogin.IsChecked;
         }
     }
 }
