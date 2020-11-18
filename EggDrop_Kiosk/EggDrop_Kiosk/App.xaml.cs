@@ -1,4 +1,5 @@
-﻿using EggDrop_Kiosk.Core.Admin.ViewModel;
+﻿using EggDrop_Kiosk.Common;
+using EggDrop_Kiosk.Core.Admin.ViewModel;
 using EggDrop_Kiosk.Core.Order;
 using EggDrop_Kiosk.Core.Order.ViewModel;
 using EggDrop_Kiosk.Core.TcpClient.ViewModel;
@@ -35,12 +36,11 @@ namespace EggDrop_Kiosk
         //    e.Handled = true;
         //}
 
+        public static SettingPreference settingPreference = new SettingPreference();
+
         private void Application_Exit(object sender, ExitEventArgs e)
         {
-            DateTime ExitTime = DateTime.Now;
-            String RunTime = (ExitTime - StartTime).ToString("h'시간 'm'분 's'초'");
-
-            //MessageBox.Show("프로그램 구동 시간: " + RunTime);
+           adminViewModel.AddUsageTime();
         }
     }
 }

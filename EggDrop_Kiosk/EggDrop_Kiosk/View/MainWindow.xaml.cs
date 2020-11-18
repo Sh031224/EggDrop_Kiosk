@@ -39,7 +39,7 @@ namespace EggDrop_Kiosk
 
           // 데이터 로드
             App.orderViewModel.LoadData();
-            App.adminViewModel.GetOrderInfo();
+            App.adminViewModel.GetUsageTime();
 
             LoginConnect();
 
@@ -59,15 +59,21 @@ namespace EggDrop_Kiosk
 
         private void LoginConnect()
         {
-            RequestModel requestModel = new RequestModel();
-            requestModel.MSGType = 0;
-            requestModel.ShopName = "";
-            requestModel.Menus = null;
-            requestModel.Content = "";
-            requestModel.OrderNumber = "";
+            try
+            {
+                RequestModel requestModel = new RequestModel();
+                requestModel.MSGType = 0;
+                requestModel.ShopName = "";
+                requestModel.Menus = null;
+                requestModel.Content = "";
+                requestModel.OrderNumber = "";
 
-            App.tcpClientViewModel.StartConnection();
-            App.tcpClientViewModel.Send(requestModel);
+                App.tcpClientViewModel.StartConnection();
+                App.tcpClientViewModel.Send(requestModel);
+            } catch
+            {
+                MessageBox.Show("서버와의 통신 도중 오류가 발생하였습니다.");
+            }
         }
 
         private void SetCustomControls()
@@ -156,6 +162,7 @@ namespace EggDrop_Kiosk
        
         private void BtnAdmin_Click(object sender, RoutedEventArgs e)
         {
+            App.adminViewModel.GetOrderInfo();
             App.uIStateManager.SwitchCustomControl(CustomControlType.ADMIN);
         }
 
