@@ -112,6 +112,10 @@
       <Project>{69980A13-06AD-4757-ACEE-1B9E293FAE2B}</Project>
       <Name>EggDrop_Kiosk.Core.Table</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EggDrop_Kiosk.Core.TcpClient\EggDrop_Kiosk.Core.TcpClient.csproj">
+      <Project>{C08C34B9-6C75-412B-9190-A61715E8BE72}</Project>
+      <Name>EggDrop_Kiosk.Core.TcpClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EggDrop_Kiosk.Core.Util\EggDrop_Kiosk.Core.Util.csproj">
       <Project>{E6977232-28B3-407D-8046-089C24020472}</Project>
       <Name>EggDrop_Kiosk.Core.Util</Name>

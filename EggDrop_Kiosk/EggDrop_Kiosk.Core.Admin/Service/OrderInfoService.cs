@@ -40,12 +40,12 @@ namespace EggDrop_Kiosk.Core.Admin.Service
                     UserName = Convert.ToString(reader["user_name"]),
                     Product = GetProductModel(idx, price, salePercent, count),
                     CreatedAt = Convert.ToDateTime(reader["created_at"].ToString()),
-                    IsCard = reader["card_number"].ToString() != "",
+                    IsCard = Convert.ToBoolean(reader["is_card"]),
                 };
 
                 if (reader["table_number"].ToString() != "")
                 {
-                    orderInfoModel.TableNumber = Convert.ToInt32(reader["table_number"]);
+                    orderInfoModel.TableNumber = Convert.ToInt32(reader["table_number"]); 
                 }
 
                 orderInfoModels.Add(orderInfoModel);

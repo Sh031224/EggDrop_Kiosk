@@ -8,7 +8,7 @@ namespace EggDrop_Kiosk.Core.TcpClient.Model
 {
     public class RequestModel
     {
-        public int MSGType { get; set; }
+        public EMsgType MSGType { get; set; }
         public String Id { get; set; }
         public String Content { get; set; }
         public String ShopName { get; set; }

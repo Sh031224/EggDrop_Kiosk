@@ -3,6 +3,7 @@
 using EggDrop_Kiosk.Core.Table.ViewModel;
 using EggDrop_Kiosk.Core.TcpClient.Model;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -35,22 +36,11 @@ namespace EggDrop_Kiosk.Control.Cash
 
                 App.completeViewModel.InsertNameById(barcodeValue.Text);
 
-                if (App.isTable)
-                {
-                    if (App.tableViewModel.SelectedTable != null)
-                    {
-                        App.completeViewModel.InsertData(App.isCard, App.tableViewModel.SelectedTable.Number, App.orderViewModel.OrderedProductModels);
-                    }
-                }
-                else
-                {
-                    App.completeViewModel.InsertData(App.isCard, 0, App.orderViewModel.OrderedProductModels);
-                }
-
-                barcodeValue.Text = "";
+                App.SendOrderInfo();
 
                 barcodeValue.SelectAll();
                 Keyboard.Focus(barcodeValue);
+                barcodeValue.Text = "";
 
                 if (App.tableViewModel.SelectedTable != null)
                 {
@@ -58,8 +48,6 @@ namespace EggDrop_Kiosk.Control.Cash
                     App.tableViewModel.InitInstance();
                 }
 
-                SendOrderInfo();
-                completeViewModel.InsertData();
                 timer.Interval = TimeSpan.FromSeconds(5);
                 timer.Tick += Timer_Tick; ;
                 timer.Start();
@@ -82,20 +70,6 @@ namespace EggDrop_Kiosk.Control.Cash
         private void CashControl_Loaded(object sender, RoutedEventArgs e)
         {
             tbTotalPrice.DataContext = App.orderViewModel;
-        }
-
-        private void SendOrderInfo()
-        {
-            RequestModel requestModel = new RequestModel();
-            requestModel.MSGType = 0;
-            requestModel.ShopName = "";
-            //for (int i = 0; i )
-            requestModel.Menus = null;
-            requestModel.Content = "";
-            requestModel.OrderNumber = "";
-
-            App.tcpClientViewModel.StartConnection();
-            App.tcpClientViewModel.Send(requestModel);
         }
     }
 }
