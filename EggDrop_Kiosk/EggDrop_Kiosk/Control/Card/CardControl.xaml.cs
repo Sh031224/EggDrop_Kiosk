@@ -38,7 +38,9 @@ namespace EggDrop_Kiosk.Control.Card
 
         private void tbRecog_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (tbRecog.Text != "")
+            if (tbRecog.Text != "" && (tbRecog.Text == "정재덕" ||
+                tbRecog.Text == "신희송" ||
+                tbRecog.Text == "크리스"))
             {
                 App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCOMPLETE);
 
