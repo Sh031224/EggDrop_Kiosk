@@ -59,7 +59,7 @@
                                 </Button.Resources>
                             </Button>
                         </StackPanel>
-                        <TextBlock Text="{Binding Value, StringFormat={}총 가격: {0}원}"
+                        <TextBlock Text="{Binding OrderedTotalPrice, StringFormat={}총 가격: {0}원}"
                                    FontSize="30"
                                    FontWeight="Bold"
                                    x:Name="tbTotalPrice"

@@ -1,23 +1,13 @@
 ﻿using EggDrop_Kiosk.Core.Complete.ViewModel;
+
+using EggDrop_Kiosk.Core.Table.ViewModel;
 using EggDrop_Kiosk.Core.TcpClient.Model;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using UIStateManagerLibrary;
-using ZXing;
 
 namespace EggDrop_Kiosk.Control.Cash
 {
@@ -26,7 +16,6 @@ namespace EggDrop_Kiosk.Control.Cash
     /// </summary>
     public partial class CashControl : CustomControlModel
     {
-        private CompleteViewModel completeViewModel = new CompleteViewModel();
         DispatcherTimer timer = new DispatcherTimer();
         public CashControl()
         {
@@ -38,31 +27,61 @@ namespace EggDrop_Kiosk.Control.Cash
 
         private void BarcodeValue_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (Equals(barcodeValue.Text, "02345673"))
+            if (barcodeValue.Text != "" && (barcodeValue.Text == "2112345678900" ||
+                barcodeValue.Text == "02345673" ||
+                barcodeValue.Text == "9790260532113"))
             {
                 App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCOMPLETE);
+
+                App.completeViewModel.InsertNameById(barcodeValue.Text);
+
+                if (App.isTable)
+                {
+                    if (App.tableViewModel.SelectedTable != null)
+                    {
+                        App.completeViewModel.InsertData(App.isCard, App.tableViewModel.SelectedTable.Number, App.orderViewModel.OrderedProductModels);
+                    }
+                }
+                else
+                {
+                    App.completeViewModel.InsertData(App.isCard, 0, App.orderViewModel.OrderedProductModels);
+                }
+
+                barcodeValue.Text = "";
+
+                barcodeValue.SelectAll();
+                Keyboard.Focus(barcodeValue);
+
+                if (App.tableViewModel.SelectedTable != null)
+                {
+                    App.tableViewModel.SelectedTable.PaidTime = DateTime.Now;
+                    App.tableViewModel.InitInstance();
+                }
+
                 SendOrderInfo();
                 completeViewModel.InsertData();
                 timer.Interval = TimeSpan.FromSeconds(5);
                 timer.Tick += Timer_Tick; ;
                 timer.Start();
             }
+
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             timer.Stop();
+            App.orderViewModel.ClearOrderedProductModels();
             App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
         }
 
         private void BarcodeValue_Loaded(object sender, RoutedEventArgs e)
         {
-            Keyboard.Focus((TextBox)sender);
+            Keyboard.Focus(barcodeValue);
         }
 
         private void CashControl_Loaded(object sender, RoutedEventArgs e)
         {
-            tbTotalPrice.DataContext = App.orderViewModel.OrderedTotalPrice;
+            tbTotalPrice.DataContext = App.orderViewModel;
         }
 
         private void SendOrderInfo()

@@ -21,21 +21,21 @@
         </StackPanel>
         <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-            <TextBlock Text="{Binding Value, StringFormat={}총 금액: {0}원}"
+            <TextBlock Text="{Binding OrderedTotalPrice, StringFormat={}총 금액: {0}원}"
                        FontSize="24"
                        FontWeight="Bold"
-                       x:Name="tbTotalPrice"/>
-            <TextBlock Text="주문 번호: "
+                       x:Name="tbTotalPrice"
+                       TextAlignment="Center"/>
+            <TextBlock Text="{Binding OrderIdx, StringFormat={}주문 번호: {0}}"
                        FontSize="24"
-                       FontWeight="Bold" />
+                       x:Name="tbOrderIdx"
+                       FontWeight="Bold"
+                       TextAlignment="Center" />
+            <TextBlock Text="잠시 후 홈 화면으로 이동합니다."
+                       Margin="0 20 0 0"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       TextAlignment="Center"/>
         </StackPanel>
-        <Button x:Name="BtnComplete"
-                Content="홈으로 이동"
-                Height="60"
-                VerticalAlignment="Bottom"
-                FontSize="16"
-                FontWeight="Bold"
-                Foreground="#ffffff"
-                Background="#FF4646" />
     </Grid>
 </base:CustomControlModel>

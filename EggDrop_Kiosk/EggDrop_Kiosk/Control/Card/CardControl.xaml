@@ -18,13 +18,13 @@
                        TextAlignment="Center"
                        FontSize="28" FontWeight="Regular"
                        Margin="0 0 0 10"/>
-            <TextBlock Text="{Binding Value, StringFormat={}총 금액: {0}원}"
+            <TextBlock Text="{Binding OrderedTotalPrice, StringFormat={}총 금액: {0}원}"
                        TextAlignment="Center"
                        FontSize="24" FontWeight="Bold"
                        Margin="0 0 0 10"
                        x:Name="tbTotalPrice"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="인식된 바코드 번호: "
+                <TextBlock Text="인식된 QR코드 번호: "
                                FontSize="20"
                                FontWeight="Bold"/>
                 <TextBox x:Name="tbRecog"

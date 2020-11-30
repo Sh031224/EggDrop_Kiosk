@@ -1,7 +1,9 @@
-﻿using EggDrop_Kiosk.Common;
 using EggDrop_Kiosk.Core.Admin.ViewModel;
+using EggDrop_Kiosk.Core.Complete.ViewModel;
+using EggDrop_Kiosk.Common;
 using EggDrop_Kiosk.Core.Order;
 using EggDrop_Kiosk.Core.Order.ViewModel;
+using EggDrop_Kiosk.Core.Table.ViewModel;
 using EggDrop_Kiosk.Core.TcpClient.ViewModel;
 using EggDrop_Kiost.Core.Login.ViewModel;
 using System;
@@ -22,8 +24,13 @@ namespace EggDrop_Kiosk
     {
         public static UIStateManager uIStateManager = new UIStateManager();
         public static OrderViewModel orderViewModel = new OrderViewModel();
+        public static CompleteViewModel completeViewModel = new CompleteViewModel();
+        public static TableViewModel tableViewModel = TableViewModel.Instance;
         public static LoginViewModel loginViewModel = new LoginViewModel();
         public static AdminViewModel adminViewModel = new AdminViewModel();
+
+        public static int isCard;
+        public static bool isTable;
 
         public static TcpClientViewModel tcpClientViewModel = new TcpClientViewModel();
 

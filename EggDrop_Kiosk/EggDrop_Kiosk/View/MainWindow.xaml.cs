@@ -39,15 +39,15 @@ namespace EggDrop_Kiosk
 
           // 데이터 로드
             App.orderViewModel.LoadData();
+            //App.adminViewModel.GetOrderInfo();
             App.adminViewModel.GetUsageTime();
 
-            LoginConnect();
+            //LoginConnect();
 
             CtrlHome.BtnAdmin.Click += BtnAdmin_Click;
             CtrlHome.BtnOrder.Click += BtnOrder_Click;
             CtrlPay.BtnCard.Click += BtnCard_Click;
             CtrlPay.BtnCash.Click += BtnCash_Click;
-            CtrlComplete.BtnComplete.Click += BtnComplete_Click;
             CtrlPlace.BtnPrevious.Click += BtnPlacePrevious_Click;
             CtrlPlace.BtnPlacePay.Click += BtnPlacePay_Click;
             CtrlPlace.BtnPlaceTable.Click += BtnPlaceTable_Click;
@@ -118,11 +118,13 @@ namespace EggDrop_Kiosk
         
         private void BtnPlacePay_Click(object sender, RoutedEventArgs e)
         {
+            App.isTable = false;
             App.uIStateManager.SwitchCustomControl(CustomControlType.PAY);
         }
         
         private void BtnPlaceTable_Click(object sender, RoutedEventArgs e)
         {
+            App.isTable = true;
             App.uIStateManager.SwitchCustomControl(CustomControlType.TABLE);
         }
 
@@ -148,10 +150,12 @@ namespace EggDrop_Kiosk
 
         private void BtnCard_Click(object sender, RoutedEventArgs e)
         {
+            App.isCard = 1;
             App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCARD);
         }
         private void BtnCash_Click(object sender, RoutedEventArgs e)
         {
+            App.isCard = 0;
             App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCASH);
         }
 
@@ -180,10 +184,6 @@ namespace EggDrop_Kiosk
                 App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
             }
             
-        }
-        private void BtnComplete_Click(object sender, RoutedEventArgs e)
-        {
-            App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
         }
 
     }
