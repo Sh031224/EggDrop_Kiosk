@@ -39,9 +39,9 @@ namespace EggDrop_Kiosk
 
           // 데이터 로드
             App.orderViewModel.LoadData();
-            App.adminViewModel.GetOrderInfo();
+            //App.adminViewModel.GetOrderInfo();
 
-            LoginConnect();
+            //LoginConnect();
 
             CtrlHome.BtnAdmin.Click += BtnAdmin_Click;
             CtrlHome.BtnOrder.Click += BtnOrder_Click;
@@ -111,11 +111,13 @@ namespace EggDrop_Kiosk
         
         private void BtnPlacePay_Click(object sender, RoutedEventArgs e)
         {
+            App.isTable = false;
             App.uIStateManager.SwitchCustomControl(CustomControlType.PAY);
         }
         
         private void BtnPlaceTable_Click(object sender, RoutedEventArgs e)
         {
+            App.isTable = true;
             App.uIStateManager.SwitchCustomControl(CustomControlType.TABLE);
         }
 
@@ -141,10 +143,12 @@ namespace EggDrop_Kiosk
 
         private void BtnCard_Click(object sender, RoutedEventArgs e)
         {
+            App.isCard = 1;
             App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCARD);
         }
         private void BtnCash_Click(object sender, RoutedEventArgs e)
         {
+            App.isCard = 0;
             App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCASH);
         }
 

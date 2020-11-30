@@ -14,8 +14,6 @@ namespace EggDrop_Kiosk.Control.Cash
     /// </summary>
     public partial class CashControl : CustomControlModel
     {
-        private TableViewModel tableViewModel = TableViewModel.Instance;
-        private CompleteViewModel completeViewModel = new CompleteViewModel();
         DispatcherTimer timer = new DispatcherTimer();
         public CashControl()
         {
@@ -27,24 +25,42 @@ namespace EggDrop_Kiosk.Control.Cash
 
         private void BarcodeValue_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (Equals(barcodeValue.Text, "123"))
+            if (barcodeValue.Text != "" && (barcodeValue.Text == "2112345678900" ||
+                barcodeValue.Text == "02345673" ||
+                barcodeValue.Text == "9790260532113"))
             {
-                if (tableViewModel.SelectedTable != null)
+                App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCOMPLETE);
+
+                App.completeViewModel.InsertNameById(barcodeValue.Text);
+
+                if (App.isTable)
                 {
-                    tableViewModel.SelectedTable.PaidTime = DateTime.Now;
-                    tableViewModel.InitInstance();
+                    if (App.tableViewModel.SelectedTable != null)
+                    {
+                        App.completeViewModel.InsertData(App.isCard, App.tableViewModel.SelectedTable.Number, App.orderViewModel.OrderedProductModels);
+                    }
+                }
+                else
+                {
+                    App.completeViewModel.InsertData(App.isCard, 0, App.orderViewModel.OrderedProductModels);
                 }
 
-                App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCOMPLETE);
                 barcodeValue.Text = "";
+
                 barcodeValue.SelectAll();
                 Keyboard.Focus(barcodeValue);
 
-                completeViewModel.InsertData();
+                if (App.tableViewModel.SelectedTable != null)
+                {
+                    App.tableViewModel.SelectedTable.PaidTime = DateTime.Now;
+                    App.tableViewModel.InitInstance();
+                }
+
                 timer.Interval = TimeSpan.FromSeconds(5);
                 timer.Tick += Timer_Tick; ;
                 timer.Start();
             }
+
         }
 
         private void Timer_Tick(object sender, EventArgs e)

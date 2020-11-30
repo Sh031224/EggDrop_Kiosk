@@ -26,8 +26,9 @@
                        FontWeight="Bold"
                        x:Name="tbTotalPrice"
                        TextAlignment="Center"/>
-            <TextBlock Text="주문 번호: "
+            <TextBlock Text="{Binding OrderIdx, StringFormat={}주문 번호: {0}}"
                        FontSize="24"
+                       x:Name="tbOrderIdx"
                        FontWeight="Bold"
                        TextAlignment="Center" />
             <TextBlock Text="잠시 후 홈 화면으로 이동합니다."

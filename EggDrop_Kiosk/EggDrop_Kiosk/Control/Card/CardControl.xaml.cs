@@ -1,6 +1,7 @@
 ﻿using EggDrop_Kiosk.Core.Complete.ViewModel;
 using EggDrop_Kiosk.Core.Table.ViewModel;
 using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -14,8 +15,6 @@ namespace EggDrop_Kiosk.Control.Card
     /// </summary>
     public partial class CardControl : CustomControlModel
     {
-        private TableViewModel tableViewModel = TableViewModel.Instance;
-        private CompleteViewModel completeViewModel = new CompleteViewModel();
         DispatcherTimer timer = new DispatcherTimer();
 
         public CardControl()
@@ -37,22 +36,42 @@ namespace EggDrop_Kiosk.Control.Card
 
         private void tbRecog_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (Equals(tbRecog.Text, "정재덕"))
+            if (tbRecog.Text != "")
             {
-                tableViewModel.SelectedTable.PaidTime = DateTime.Now;
-                tableViewModel.InitInstance();
                 App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCOMPLETE);
-                completeViewModel.InsertData();
-                timer.Interval = TimeSpan.FromSeconds(5);
-                timer.Tick += Timer_Tick;
-                timer.Start();
+
+                App.completeViewModel.InsertIdByName(tbRecog.Text);
+
+                if (App.isTable)
+                {
+                    if (App.tableViewModel.SelectedTable != null)
+                    {
+                        App.completeViewModel.InsertData(App.isCard, App.tableViewModel.SelectedTable.Number, App.orderViewModel.OrderedProductModels);
+                    }
+                }
+                else
+                {
+                    App.completeViewModel.InsertData(App.isCard, 0, App.orderViewModel.OrderedProductModels);
+                }
+
+                tbRecog.Text = "";
+
             }
+
+
+            if (App.tableViewModel.SelectedTable != null)
+            {
+                App.tableViewModel.SelectedTable.PaidTime = DateTime.Now;
+                App.tableViewModel.InitInstance();
+            }
+            timer.Interval = TimeSpan.FromSeconds(5);
+            timer.Tick += Timer_Tick;
+            timer.Start();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             timer.Stop();
-            tbRecog.Text = "";
             App.orderViewModel.ClearOrderedProductModels();
             App.uIStateManager.SwitchCustomControl(CustomControlType.HOME);
         }

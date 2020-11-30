@@ -10,7 +10,7 @@ namespace EggDrop_Kiosk.Core.Table.Model
 {
     public class TableModel: BindableBase
     {
-        public const int EXPIRE_SECOND = 60;
+        public const int EXPIRE_SECOND = 60; 
         public int Number { get; set; }
 
         private DateTime _paidTime;

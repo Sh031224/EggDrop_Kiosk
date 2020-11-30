@@ -34,6 +34,7 @@ namespace EggDrop_Kiosk.Control.Complete
         private void CompleteControl_Loaded(object sender, RoutedEventArgs e)
         {
             tbTotalPrice.DataContext = App.orderViewModel;
+            tbOrderIdx.DataContext = App.completeViewModel;
         }
     }
 }
