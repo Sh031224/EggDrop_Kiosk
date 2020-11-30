@@ -1,5 +1,7 @@
 ﻿using EggDrop_Kiosk.Core.Complete.ViewModel;
+
 using EggDrop_Kiosk.Core.Table.ViewModel;
+using EggDrop_Kiosk.Core.TcpClient.Model;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -56,6 +58,8 @@ namespace EggDrop_Kiosk.Control.Cash
                     App.tableViewModel.InitInstance();
                 }
 
+                SendOrderInfo();
+                completeViewModel.InsertData();
                 timer.Interval = TimeSpan.FromSeconds(5);
                 timer.Tick += Timer_Tick; ;
                 timer.Start();
@@ -78,6 +82,20 @@ namespace EggDrop_Kiosk.Control.Cash
         private void CashControl_Loaded(object sender, RoutedEventArgs e)
         {
             tbTotalPrice.DataContext = App.orderViewModel;
+        }
+
+        private void SendOrderInfo()
+        {
+            RequestModel requestModel = new RequestModel();
+            requestModel.MSGType = 0;
+            requestModel.ShopName = "";
+            //for (int i = 0; i )
+            requestModel.Menus = null;
+            requestModel.Content = "";
+            requestModel.OrderNumber = "";
+
+            App.tcpClientViewModel.StartConnection();
+            App.tcpClientViewModel.Send(requestModel);
         }
     }
 }

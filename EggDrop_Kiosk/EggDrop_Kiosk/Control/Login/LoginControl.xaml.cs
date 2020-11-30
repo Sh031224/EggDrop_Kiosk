@@ -1,10 +1,12 @@
-﻿using EggDrop_Kiosk.Core.Order.Model;
+﻿using EggDrop_Kiosk.Common;
+using EggDrop_Kiosk.Core.Order.Model;
 using EggDrop_Kiosk.Core.TcpClient.Model;
 using EggDrop_Kiosk.Properties;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +36,7 @@ namespace EggDrop_Kiosk.Control.Login
 
         private void LoginControl_Loaded(object sender, RoutedEventArgs e)
         {
-            if (Settings.Default.autoLogin)
+            if (App.settingPreference.AutoLogin)
             {
                 LoginSuccess();
             }
@@ -46,9 +48,9 @@ namespace EggDrop_Kiosk.Control.Login
             {
                 Boolean success = App.loginViewModel.TryLogin(tbUserId.Text, tbUserPw.Password);
 
-                Settings.Default.autoLogin = (bool)cbAutoLogin.IsChecked;
-                Settings.Default.Save();
+                App.settingPreference.AutoLogin = (bool)cbAutoLogin.IsChecked;
 
+                Debug.WriteLine(cbAutoLogin.IsChecked);
                 if (success)
                 {
                     LoginSuccess();
