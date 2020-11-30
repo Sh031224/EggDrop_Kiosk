@@ -24,6 +24,21 @@ namespace EggDrop_Kiosk.Control.Cash
             Loaded += CashControl_Loaded;
             barcodeValue.Loaded += BarcodeValue_Loaded;
             barcodeValue.TextChanged += BarcodeValue_TextChanged;
+            IsVisibleChanged += CashControl_IsVisibleChanged;
+        }
+
+        private void CashControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if ((e.NewValue).ToString() == "True") 
+            {
+                barcodeValue.SelectAll();
+                Keyboard.Focus(barcodeValue);
+                Dispatcher.BeginInvoke(DispatcherPriority.Input,
+                new Action(delegate () {
+                    barcodeValue.Focus();         // Set Logical Focus
+                    Keyboard.Focus(barcodeValue); // Set Keyboard Focus
+                }));
+            }
         }
 
         private void BarcodeValue_TextChanged(object sender, TextChangedEventArgs e)
@@ -38,20 +53,21 @@ namespace EggDrop_Kiosk.Control.Cash
 
                 App.SendOrderInfo();
 
-                barcodeValue.Focus();
+                barcodeValue.SelectAll();
+                Keyboard.Focus(barcodeValue);
                 barcodeValue.Text = "";
-                
+
                 if (App.tableViewModel.SelectedTable != null)
                 {
                     App.tableViewModel.SelectedTable.PaidTime = DateTime.Now;
                     App.tableViewModel.InitInstance();
                 }
 
-                App.SendOrderInfo();
                 timer.Interval = TimeSpan.FromSeconds(5);
                 timer.Tick += Timer_Tick; ;
                 timer.Start();
             }
+
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -63,7 +79,7 @@ namespace EggDrop_Kiosk.Control.Cash
 
         private void BarcodeValue_Loaded(object sender, RoutedEventArgs e)
         {
-            barcodeValue.Focus();
+            Keyboard.Focus(barcodeValue);
         }
 
         private void CashControl_Loaded(object sender, RoutedEventArgs e)
