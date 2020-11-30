@@ -102,6 +102,11 @@ namespace EggDrop_Kiosk.Core.TcpClient.Service
                 Array.Copy(ao.buffer, msgByte, recvBytes);
 
                 // 받은 메세지를 출력
+                String msg = Encoding.UTF8.GetString(msgByte);
+                if (msg != "200")
+                {
+                    MessageBox.Show(Encoding.UTF8.GetString(msgByte), "서버로부터 메시지가 도착하였습니다.");
+                }
                 Debug.WriteLine("메세지 받음: {0}", Encoding.UTF8.GetString(msgByte));
             }
 

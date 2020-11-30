@@ -45,21 +45,19 @@ namespace EggDrop_Kiosk.Control.Card
                 App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCOMPLETE);
 
                 App.completeViewModel.InsertIdByName(tbRecog.Text);
-
+          
                 App.SendOrderInfo();
                 tbRecog.Text = "";
 
+                if (App.tableViewModel.SelectedTable != null)
+                {
+                    App.tableViewModel.SelectedTable.PaidTime = DateTime.Now;
+                    App.tableViewModel.InitInstance();
+                }
+                timer.Interval = TimeSpan.FromSeconds(5);
+                timer.Tick += Timer_Tick;
+                timer.Start();
             }
-
-
-            if (App.tableViewModel.SelectedTable != null)
-            {
-                App.tableViewModel.SelectedTable.PaidTime = DateTime.Now;
-                App.tableViewModel.InitInstance();
-            }
-            timer.Interval = TimeSpan.FromSeconds(5);
-            timer.Tick += Timer_Tick;
-            timer.Start();
         }
 
         private void Timer_Tick(object sender, EventArgs e)

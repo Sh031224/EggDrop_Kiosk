@@ -86,7 +86,7 @@ namespace EggDrop_Kiosk.Core.Complete.Service
                 dbConnection.Connect();
                 dbConnection.SetCommand("INSERT INTO kiosk.order_info (user_name, user_id, is_card," +
                     "table_number, product_idx, product_count, price, sale_percent, order_idx, created_at)" +
-                    "VALUES ('" + userId + "','" + userName + "','" + isCard + "','" + tableNumber + "','" + product.Idx + "','" + product.Count + "','" + product.Price + "','" + product.SalePercent +
+                    "VALUES ('" + userName + "','" + userId + "','" + isCard + "','" + tableNumber + "','" + product.Idx + "','" + product.Count + "','" + product.Price + "','" + product.SalePercent +
                     "','" + orderIdx + "','" + DateTime.Now.ToString("yyyy:MM:dd HH:mm:ss") + "')");
 
                 dbConnection.Execute();

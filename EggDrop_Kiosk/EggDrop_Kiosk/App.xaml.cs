@@ -66,7 +66,7 @@ namespace EggDrop_Kiosk
                 });
             }
 
-            requestModel.OrderNumber = (completeViewModel.OrderIdx % 100).ToString().PadLeft(2, '0');
+            requestModel.OrderNumber = (completeViewModel.OrderIdx % 100).ToString().PadLeft(3, '0');
             requestModel.Menus = menus;
             requestModel.Content = "";
 
