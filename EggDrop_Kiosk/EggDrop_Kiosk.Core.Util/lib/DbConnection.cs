@@ -1,5 +1,6 @@
 ﻿using EggDrop_Kiosk.Core.Util.Config;
 using MySql.Data.MySqlClient;
+using EggDrop_Kiosk.Config;
 
 namespace EggDrop_Kiosk.Core.Util
 {

@@ -14,6 +14,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using UIStateManagerLibrary;
+using EggDrop_Kiosk.Core.TcpClient.Model;
 
 namespace EggDrop_Kiosk
 {
@@ -44,6 +45,33 @@ namespace EggDrop_Kiosk
         //}
 
         public static SettingPreference settingPreference = new SettingPreference();
+
+        public static void SendOrderInfo()
+        {
+            completeViewModel.InsertData(isCard, isTable ? tableViewModel.SelectedTable.Number : 0, orderViewModel.OrderedProductModels);
+
+            RequestModel requestModel = new RequestModel();
+            requestModel.MSGType = EMsgType.ORDER_INFO;
+            requestModel.ShopName = "승호의 맛나는 EggDrop";
+
+            List<RequestMenuModel> menus = new List<RequestMenuModel>();
+
+            for (int i = 0; i < orderViewModel.OrderedProductModels.Count; i++)
+            {
+                menus.Add(new RequestMenuModel()
+                {
+                    Count = orderViewModel.OrderedProductModels[i].Count,
+                    Name = orderViewModel.OrderedProductModels[i].Name,
+                    Price = orderViewModel.OrderedProductModels[i].SalePrice
+                });
+            }
+
+            requestModel.OrderNumber = (completeViewModel.OrderIdx % 100).ToString().PadLeft(2, '0');
+            requestModel.Menus = menus;
+            requestModel.Content = "";
+
+            tcpClientViewModel.Send(requestModel);
+        }
 
         private void Application_Exit(object sender, ExitEventArgs e)
         {

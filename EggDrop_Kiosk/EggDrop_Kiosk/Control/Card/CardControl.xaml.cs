@@ -1,6 +1,8 @@
 ﻿using EggDrop_Kiosk.Core.Complete.ViewModel;
 using EggDrop_Kiosk.Core.Table.ViewModel;
+using EggDrop_Kiosk.Core.TcpClient.Model;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
@@ -42,18 +44,7 @@ namespace EggDrop_Kiosk.Control.Card
 
                 App.completeViewModel.InsertIdByName(tbRecog.Text);
 
-                if (App.isTable)
-                {
-                    if (App.tableViewModel.SelectedTable != null)
-                    {
-                        App.completeViewModel.InsertData(App.isCard, App.tableViewModel.SelectedTable.Number, App.orderViewModel.OrderedProductModels);
-                    }
-                }
-                else
-                {
-                    App.completeViewModel.InsertData(App.isCard, 0, App.orderViewModel.OrderedProductModels);
-                }
-
+                App.SendOrderInfo();
                 tbRecog.Text = "";
 
             }

@@ -17,18 +17,18 @@ namespace EggDrop_Kiosk.Core.TcpClient.ViewModel
 
         public void StartConnection()
         {
-            tcpClientService.StartClient();
+            tcpClientService.start();
         }
 
         public void CloseConnection()
         {
-            tcpClientService.CloseClient();
+            tcpClientService.close();
         }
 
         public void Send(RequestModel requestModel)
         {
             requestModel.Id = tcpClientConfig.GetGrade();
-            tcpClientService.Send(JsonConvert.SerializeObject(requestModel));
+            tcpClientService.SendMessage(JsonConvert.SerializeObject(requestModel));
         }
     }
 }

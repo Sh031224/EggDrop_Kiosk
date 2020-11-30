@@ -1,5 +1,7 @@
 ﻿using EggDrop_Kiosk.Core.Complete.Service;
 using EggDrop_Kiosk.Core.Order.Model;
+using EggDrop_Kiosk.Core.TcpClient.Model;
+using Google.Protobuf.WellKnownTypes;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;

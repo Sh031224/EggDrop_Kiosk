@@ -39,10 +39,10 @@ namespace EggDrop_Kiosk
 
           // 데이터 로드
             App.orderViewModel.LoadData();
-            //App.adminViewModel.GetOrderInfo();
+            App.adminViewModel.GetOrderInfo();
             App.adminViewModel.GetUsageTime();
 
-            //LoginConnect();
+            LoginConnect();
 
             CtrlHome.BtnAdmin.Click += BtnAdmin_Click;
             CtrlHome.BtnOrder.Click += BtnOrder_Click;
