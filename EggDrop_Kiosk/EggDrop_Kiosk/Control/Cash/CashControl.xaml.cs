@@ -38,21 +38,20 @@ namespace EggDrop_Kiosk.Control.Cash
 
                 App.SendOrderInfo();
 
-                barcodeValue.SelectAll();
-                Keyboard.Focus(barcodeValue);
+                barcodeValue.Focus();
                 barcodeValue.Text = "";
-
+                
                 if (App.tableViewModel.SelectedTable != null)
                 {
                     App.tableViewModel.SelectedTable.PaidTime = DateTime.Now;
                     App.tableViewModel.InitInstance();
                 }
 
+                App.SendOrderInfo();
                 timer.Interval = TimeSpan.FromSeconds(5);
                 timer.Tick += Timer_Tick; ;
                 timer.Start();
             }
-
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -64,7 +63,7 @@ namespace EggDrop_Kiosk.Control.Cash
 
         private void BarcodeValue_Loaded(object sender, RoutedEventArgs e)
         {
-            Keyboard.Focus(barcodeValue);
+            barcodeValue.Focus();
         }
 
         private void CashControl_Loaded(object sender, RoutedEventArgs e)
