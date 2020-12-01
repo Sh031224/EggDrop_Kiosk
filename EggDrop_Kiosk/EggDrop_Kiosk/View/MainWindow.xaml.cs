@@ -42,7 +42,7 @@ namespace EggDrop_Kiosk
             App.adminViewModel.GetOrderInfo();
             App.adminViewModel.GetUsageTime();
 
-            LoginConnect();
+            //LoginConnect();
 
             CtrlHome.BtnAdmin.Click += BtnAdmin_Click;
             CtrlHome.BtnOrder.Click += BtnOrder_Click;
