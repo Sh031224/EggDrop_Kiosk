@@ -32,7 +32,30 @@ namespace EggDrop_Kiosk.Control.Home
         {
             // 비디오 자동 재생
             EggDropVideo.Play();
+            IsVisibleChanged += CashControl_IsVisibleChanged;
         }
+
+        private void CashControl_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            Window window = Window.GetWindow(this);
+
+            if ((e.NewValue).ToString() == "True")
+            {
+                window.KeyDown += Window_KeyDown;
+            } else
+            {
+                window.KeyDown -= Window_KeyDown;
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F2)
+            {
+                App.uIStateManager.SwitchCustomControl(CustomControlType.ADMIN);
+            }
+        }
+
 
         // 비디오 무한 재생
         private void EggDropVideoEnded(object sender, RoutedEventArgs e)

@@ -44,7 +44,7 @@ namespace EggDrop_Kiosk.Control.Cash
         private void BarcodeValue_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (barcodeValue.Text != "" && (barcodeValue.Text == "2112345678900" ||
-                barcodeValue.Text == "02345673" ||
+                barcodeValue.Text == "02345673" || 
                 barcodeValue.Text == "9790260532113"))
             {
                 App.uIStateManager.SwitchCustomControl(CustomControlType.PAYCOMPLETE);
