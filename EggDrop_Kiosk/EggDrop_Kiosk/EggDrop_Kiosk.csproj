@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E198857-022B-4BB3-8E4F-D210FFF2B546}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EggDrop_Kiosk</RootNamespace>
+    <AssemblyName>EggDrop_Kiosk</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism, Version=7.2.0.1422, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.7.2.0.1422\lib\net45\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KQRCode\bin\Debug\zxing.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Control\Admin\AdminControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Card\CardControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Cash\CashControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Complete\CompleteControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Home\HomeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Login\LoginControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Order\OrderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Pay\PayControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Place\PlaceControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Table\TableControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\SettingPreference.cs" />
+    <Compile Include="Control\Admin\AdminControl.xaml.cs">
+      <DependentUpon>AdminControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Card\CardControl.xaml.cs">
+      <DependentUpon>CardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Cash\CashControl.xaml.cs">
+      <DependentUpon>CashControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Complete\CompleteControl.xaml.cs">
+      <DependentUpon>CompleteControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Home\HomeControl.xaml.cs">
+      <DependentUpon>HomeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Login\LoginControl.xaml.cs">
+      <DependentUpon>LoginControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Order\OrderControl.xaml.cs">
+      <DependentUpon>OrderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Pay\PayControl.xaml.cs">
+      <DependentUpon>PayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Place\PlaceControl.xaml.cs">
+      <DependentUpon>PlaceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Table\TableControl.xaml.cs">
+      <DependentUpon>TableControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\UsingTableConverter.cs" />
+    <Compile Include="Converter\VisibilityConverter.cs" />
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Assets\.keep" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Home\home-video.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Assets\Home\Home.png" />
+    <Resource Include="Assets\Order\Coffee\Americano.jpg" />
+    <Resource Include="Assets\Order\Coffee\Cafe Latte.jpg" />
+    <Resource Include="Assets\Order\Coffee\Cappuccino.jpg" />
+    <Resource Include="Assets\Order\Coffee\Dark Chocolate Mocha.jpg" />
+    <Resource Include="Assets\Order\Coffee\Homemade Latte.jpg" />
+    <Resource Include="Assets\Order\Coffee\Jeju Matcha Latte.jpg" />
+    <Resource Include="Assets\Order\Coffee\Milk Chocolate.jpg" />
+    <Resource Include="Assets\Order\Coffee\Shakerato.jpg" />
+    <Resource Include="Assets\Order\Coffee\Vanilla Latte.jpg" />
+    <Resource Include="Assets\Order\Juice\Grapefruit Juice.jpg" />
+    <Resource Include="Assets\Order\Juice\Mango Juice.jpg" />
+    <Resource Include="Assets\Order\Juice\Orange Juice.jpg" />
+    <Resource Include="Assets\Order\Sandwich\American Ham Cheese.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Avo Holic.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Bacon Dobuble Cheese.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Egg Cobb Salad.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Garlic Bacon Cheese.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Mr.Egg.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Tamago Sando.PNG" />
+    <Resource Include="Assets\Order\Sandwich\Teriyaki BBQ.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EggDrop_Kiosk.Core.Admin\EggDrop_Kiosk.Core.Admin.csproj">
+      <Project>{f9c953d0-1511-46e4-af23-fed0bad406a8}</Project>
+      <Name>EggDrop_Kiosk.Core.Admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EggDrop_Kiosk.Core.Complete\EggDrop_Kiosk.Core.Complete.csproj">
+      <Project>{d00f1ad2-6a05-458b-b908-4f472611f2f5}</Project>
+      <Name>EggDrop_Kiosk.Core.Complete</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EggDrop_Kiosk.Core.Order\EggDrop_Kiosk.Core.Order.csproj">
+      <Project>{F37A2EA7-E301-46BF-988F-64767A43155F}</Project>
+      <Name>EggDrop_Kiosk.Core.Order</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EggDrop_Kiosk.Core.Table\EggDrop_Kiosk.Core.Table.csproj">
+      <Project>{69980A13-06AD-4757-ACEE-1B9E293FAE2B}</Project>
+      <Name>EggDrop_Kiosk.Core.Table</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EggDrop_Kiosk.Core.TcpClient\EggDrop_Kiosk.Core.TcpClient.csproj">
+      <Project>{c08c34b9-6c75-412b-9190-a61715e8be72}</Project>
+      <Name>EggDrop_Kiosk.Core.TcpClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EggDrop_Kiosk.Core.Util\EggDrop_Kiosk.Core.Util.csproj">
+      <Project>{E6977232-28B3-407D-8046-089C24020472}</Project>
+      <Name>EggDrop_Kiosk.Core.Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EggDrop_Kiost.Core.Login\EggDrop_Kiost.Core.Login.csproj">
+      <Project>{b0b9616f-f666-4698-bc61-9abe705b344d}</Project>
+      <Name>EggDrop_Kiost.Core.Login</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KQRCode\KQRCode.csproj">
+      <Project>{62f1b37e-4bb2-442b-99a7-36279c5c0f3f}</Project>
+      <Name>KQRCode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIStateManagerLibrary\UIStateManagerLibrary.csproj">
+      <Project>{6c8ddf0d-6bd6-41de-be05-20777b69a311}</Project>
+      <Name>UIStateManagerLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

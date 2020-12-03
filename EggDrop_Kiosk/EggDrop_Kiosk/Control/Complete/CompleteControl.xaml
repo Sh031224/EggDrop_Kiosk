@@ -1,0 +1,41 @@
+﻿<base:CustomControlModel  xmlns:base="clr-namespace:UIStateManagerLibrary;assembly=UIStateManagerLibrary"
+                          x:Class="EggDrop_Kiosk.Control.Complete.CompleteControl"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                          xmlns:local="clr-namespace:EggDrop_Kiosk.Control.Complete"
+                          mc:Ignorable="d"
+                          d:DesignHeight="450"
+                          d:DesignWidth="800">
+    <Grid Background="#ffffff">
+        <StackPanel HorizontalAlignment="center">
+            <TextBlock Text="주문 완료!"
+                       FontSize="36"
+                       FontWeight="bold"
+                       TextAlignment="Center"
+                       Margin="0 30 0 12" />
+            <TextBlock Text="주문이 완료되었습니다."
+                       FontSize="16"
+                       TextAlignment="Center" />
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <TextBlock Text="{Binding OrderedTotalPrice, StringFormat={}총 금액: {0}원}"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       x:Name="tbTotalPrice"
+                       TextAlignment="Center"/>
+            <TextBlock Text="{Binding OrderIdx, StringFormat={}주문 번호: {0}}"
+                       FontSize="24"
+                       x:Name="tbOrderIdx"
+                       FontWeight="Bold"
+                       TextAlignment="Center" />
+            <TextBlock Text="잠시 후 홈 화면으로 이동합니다."
+                       Margin="0 20 0 0"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       TextAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</base:CustomControlModel>

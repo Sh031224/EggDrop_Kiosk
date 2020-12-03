@@ -1,0 +1,57 @@
+﻿<base:CustomControlModel xmlns:base="clr-namespace:UIStateManagerLibrary;assembly=UIStateManagerLibrary"
+             x:Class="EggDrop_Kiosk.Control.Home.HomeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EggDrop_Kiosk.Control.Home"
+             mc:Ignorable="d" 
+             d:DesignHeight="900" d:DesignWidth="1920">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <MediaElement Name="EggDropVideo" Grid.Row="0" Stretch="Fill"
+                      Source="Assets/Home/home-video.mp4"
+                      LoadedBehavior="Play"
+                      UnloadedBehavior="Manual"
+                      MediaEnded="EggDropVideoEnded"
+                      Volume="0"/>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="EGG DROP을 방문해주셔서 감사합니다."
+                   Height="70"
+                   FontSize="46"
+                   FontWeight="DemiBold"
+                   Margin="544,30,543,0"
+                   HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Text="맛있는 샌드위치가 당신을 기다리고 있어요."
+                   Height="70"
+                   FontSize="36"
+                   FontWeight="Normal"
+                   HorizontalAlignment="Center"
+                   Foreground="Gray"/>
+        </StackPanel>
+        <Button x:Name="BtnAdmin" Content="관리자"
+                Grid.Row="1"
+                FontSize="30" FontWeight="Bold"
+                Margin="0 0 40 40"
+                HorizontalAlignment="Right"
+                Width="200"
+                Height="60"/>
+        <Button Grid.Row="1" Height="100"
+                VerticalAlignment="Bottom"
+                Content="주문하기"
+                FontSize="42"
+                FontWeight="Regular"
+                x:Name="BtnOrder">
+            <Button.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#FF4646" />
+                    <Setter Property="Foreground" Value="#ffffff" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</base:CustomControlModel>

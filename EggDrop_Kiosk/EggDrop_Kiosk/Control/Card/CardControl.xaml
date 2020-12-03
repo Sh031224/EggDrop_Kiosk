@@ -1,0 +1,55 @@
+﻿<base:CustomControlModel xmlns:base="clr-namespace:UIStateManagerLibrary;assembly=UIStateManagerLibrary"
+             x:Class="EggDrop_Kiosk.Control.Card.CardControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EggDrop_Kiosk.Control.Card"
+             mc:Ignorable="d" 
+             xmlns:qrcode="clr-namespace:KQRCode;assembly=KQRCode"
+             d:DesignHeight="900" d:DesignWidth="1920">
+    <Grid Background="#ffffff">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="카드 결제를 선택하셨습니다."
+                       FontSize="40" FontWeight="black"
+                       Margin="0 0 0 10"
+                       TextAlignment="Center"/>
+            <TextBlock Text="카메라에 QR코드를 인식하세요."
+                       TextAlignment="Center"
+                       FontSize="28" FontWeight="Regular"
+                       Margin="0 0 0 10"/>
+            <TextBlock Text="{Binding OrderedTotalPrice, StringFormat={}총 금액: {0}원}"
+                       TextAlignment="Center"
+                       FontSize="24" FontWeight="Bold"
+                       Margin="0 0 0 10"
+                       x:Name="tbTotalPrice"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="인식된 QR코드 번호: "
+                               FontSize="20"
+                               FontWeight="Bold"/>
+                <TextBox x:Name="tbRecog"
+                         FontSize="20"
+                         FontWeight="Bold"
+                         TextChanged="tbRecog_TextChanged"
+                         CaretBrush="Transparent"
+                         BorderThickness="0"/>
+            </StackPanel>
+            <qrcode:KQRWebCam x:Name="webcam"
+                              Width="250" Height="200"
+                              QrDecoded="webcam_QrDecoded"/>
+        </StackPanel>
+        <Button x:Name="BtnPrevious" Content="이전"
+                        FontSize="26"
+                    Width="500" Height="60"
+                    VerticalAlignment="Bottom"
+                    Margin="0 0 0 14">
+            <Button.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#FF4646" />
+                    <Setter Property="Foreground" Value="#ffffff" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</base:CustomControlModel>
