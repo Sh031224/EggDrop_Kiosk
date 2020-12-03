@@ -28,3 +28,27 @@
   - 주문 시 채팅으로 서버로 주문 정보를 전송합니다.
   - 서버에서 온 메시지를 화면에 띄워줍니다.
   
+### 스크린샷
+
+<div>
+  <img src="https://user-images.githubusercontent.com/51149996/101014536-595dd980-35a9-11eb-96f7-2bad4701492c.png" width="48%" />
+  <img src="https://user-images.githubusercontent.com/51149996/101014828-d0936d80-35a9-11eb-9181-03a5d0350723.png" width="48%" />
+</div>
+<div>
+  <img src="https://user-images.githubusercontent.com/51149996/101014867-e1dc7a00-35a9-11eb-9ae7-6a6d47c20135.png" width="48%" />
+  <img src="https://user-images.githubusercontent.com/51149996/101015120-40095d00-35aa-11eb-8c11-92e37d61fb39.png" width="48%" />
+</div>
+
+## 개발 환경
+
+- Visual Studio
+  - C#
+  - WPF
+  
+## 정보
+
+- `EggDrop` 프렌차이즈의 키오스크를 제작하였습니다.
+- 개발
+  - 윈도우: [차승호](https://github.com/Sh031224), [임규민](https://github.com/limgyumin), [김문모](https://github.com/03kimmoonmo)
+  - 데이터베이스: [차승호](https://github.com/Sh031224), [임규민](https://github.com/limgyumin)
+- 문의: 1cktmdgh2@gmail.com
